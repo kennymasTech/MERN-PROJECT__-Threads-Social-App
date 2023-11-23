@@ -5,7 +5,7 @@ import { Portal } from "@chakra-ui/portal";
 import { Avatar } from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
-import { useToast } from '@chakra-ui/toast'
+import { useToast } from '@chakra-ui/toast';
 
 const UserHeader = () => {
 
