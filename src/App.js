@@ -2,7 +2,7 @@ import { Container } from '@chakra-ui/react'
 import { Routes, Route } from 'react-router-dom'
 import UserPage from './pages/UserPage'
 import PostPage from './pages/PostPage'
-import Hearder from './component/Hearder'
+import Hearder from './components/Hearder'
 
 const App = () => {
   return (
