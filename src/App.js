@@ -1,12 +1,18 @@
 
-import { Button } from '@chakra-ui/react'
 import { Container } from '@chakra-ui/react';
+import { Routes, Route } from 'react-router-dom';
+import UserPage from './components/UserPage';
+import PostPage from './components/PostPage';
+
 
 
 function App() {
   return (
-    <Container className="App">
-        <Button colorScheme='yellow'>Button</Button>
+    <Container maxW="620px">
+        <Routes>
+            <Route path='/:username' element={<UserPage/>} />
+            <Route path='/:username/post/:pid' element={<PostPage/>}/>
+        </Routes>
     </Container>
   );
 }
