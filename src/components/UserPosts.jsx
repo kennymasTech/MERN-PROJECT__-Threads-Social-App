@@ -5,7 +5,7 @@ import Reactions from "./Reactions";
 import { useState } from "react";
 
 const UserPosts = () => {
-    const [liked, setLiked] = useState(false)
+    const [liked, setLiked] = useState(false);
 
   return (
     <Link to={"/aliumusa/post/1"}>
