@@ -1,10 +1,12 @@
+
 import { Flex } from '@chakra-ui/react'
-import React from 'react'
 
 const Reactions = ({ liked, setLiked}) => {
   return (
     <>
-        <Flex cursor={'pointer'} gap={3} my={2}></Flex>
+        <Flex cursor={'pointer'} gap={3} my={2}>
+
+        </Flex>
     </>
   )
 }
