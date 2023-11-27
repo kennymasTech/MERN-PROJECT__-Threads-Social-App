@@ -70,6 +70,11 @@ const UserPosts = () => {
           <Flex>
             <Reactions liked={liked} setLiked={setLiked} />
           </Flex>
+
+          <Flex>
+            <Text>12 Replies</Text>
+            <Text>540 likes</Text>
+          </Flex>
         </Flex>
       </Flex>
     </Link>
