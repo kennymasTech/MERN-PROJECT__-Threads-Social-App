@@ -71,7 +71,7 @@ const UserPosts = () => {
             <Reactions liked={liked} setLiked={setLiked} />
           </Flex>
 
-          <Flex>
+          <Flex gap={2}>
             <Text>12 Replies</Text>
             <Text>540 likes</Text>
           </Flex>
