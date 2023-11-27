@@ -1,6 +1,7 @@
 import { Avatar, Box, Flex, Image, Text } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Reactions from "./Reactions";
 
 const UserPosts = () => {
   return (
@@ -58,7 +59,9 @@ const UserPosts = () => {
             <Image src="/post3.png" w={'full'} />
           </Box>
 
-          <Flex></Flex>
+          <Flex>
+            <Reactions/>
+          </Flex>
         </Flex>
       </Flex>
     </Link>
