@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Reactions from "./Reactions";
 import { useState } from "react";
 
-const UserPosts = () => {
+const UserPosts = ({userAvatar, useName, postTitle, postImg}) => {
   const [liked, setLiked] = useState(false);
 
   return (

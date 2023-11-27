@@ -6,7 +6,7 @@ const UserPage = () => {
    return (
       <>
          <UserHeader/>
-         <UserPosts/>
+         <UserPosts userAvatar={'https://bit.ly/tioluwani-kolawole'} userName={'Kolisco'} postImg={'/post1.png'} postTitle={'Hello Kennymas'}/>
          <UserPosts/>
          <UserPosts/>
       </>
