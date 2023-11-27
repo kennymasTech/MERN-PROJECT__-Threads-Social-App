@@ -6,9 +6,9 @@ const UserPosts = () => {
   return (
     <Link to={"/aliumusa/post/1"}>
       <Flex gap={3} mb={4} py={5}>
-        <Flex flexDir={"column"}>
+        <Flex alignItems={'center'} flexDir={"column"}>
           <Avatar src="/post1.png" name="Mark Zuckerberg" size={"md"} />
-          <Box w={"1px"} h={"full"} bg={"gray.light"} my={2}></Box>
+          <Box w={"1px"} h={"full"} bg={"gray.light"} my={2} ></Box>
           <Box pos={"relative"} w={"full"}>
             <Avatar
               src="/post1.png"
@@ -53,10 +53,12 @@ const UserPosts = () => {
             </Flex>
           </Flex>
 
-          <Text>Hello Thread!!!</Text>
-          <Box>
-            <Image src="/aliumusa.jpeg" />
+          <Text fontSize={'sm'}>Hello Thread!!!</Text>
+          <Box overflow={'hidden'} borderRadius={6} border={'1px solid'} borderColor={'gray.light'}>
+            <Image src="/post3.png" w={'full'} />
           </Box>
+
+          
         </Flex>
       </Flex>
     </Link>
