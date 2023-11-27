@@ -11,7 +11,7 @@ const App = () => {
       <Hearder />
       <Routes>
         <Route path="/:username" element={<UserPage />} />
-        <Route path="/:username/post/:id" element={<PostPage />} />
+        <Route path="/:username/post/:pid" element={<PostPage />} />
       </Routes>
     </Container>
   );
