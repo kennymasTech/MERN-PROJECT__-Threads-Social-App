@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, Image, Text } from "@chakra-ui/react";
-import { BsDot, BsThreeDots } from "react-icons/bs";
+import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Reactions from "./Reactions";
 import { useState } from "react";
@@ -73,7 +73,7 @@ const UserPosts = () => {
 
           <Flex gap={2} color={'gray.light'} fontSize={'sm'} alignItems={'center'}>
             <Text>12 Replies</Text>
-            <BsDot/>
+            <Box w={0.5} h={0.5} borderRadius={'full'} bg={'green'}></Box>
             <Text>540 likes</Text>
           </Flex>
         </Flex>
