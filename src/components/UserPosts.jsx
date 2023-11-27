@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Reactions from "./Reactions";
 
 const UserPosts = () => {
+    const 
+
   return (
     <Link to={"/aliumusa/post/1"}>
       <Flex gap={3} mb={4} py={5}>
@@ -60,7 +62,7 @@ const UserPosts = () => {
           </Box>
 
           <Flex>
-            <Reactions/>
+            <Reactions liked={liked} setLiked={setLiked}/>
           </Flex>
         </Flex>
       </Flex>
