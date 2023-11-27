@@ -4,7 +4,7 @@ import { Flex } from '@chakra-ui/react'
 const Reactions = ({ liked, setLiked}) => {
   return (
     <>
-        <Flex cursor={'pointer'} gap={3} my={2}>
+        <Flex cursor={'pointer'} gap={3} my={2} onClick={(e) => e.preventDefault()}>
         <svg
           aria-label="Unlike"
           class="x1lliihq x1n2onr6 x18l41xo"
