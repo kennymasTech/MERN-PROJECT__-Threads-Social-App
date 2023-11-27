@@ -8,7 +8,8 @@ const Reactions = ({ liked, setLiked}) => {
         <svg
           aria-label="Unlike"
           class="x1lliihq x1n2onr6 x18l41xo"
-          fill="transparent"
+          fill= {liked ? "rgb(237,73,86)"  "transparent"}
+          color={liked ? "rgb(237,73,86)" : ""}
           height="20"
           role="img"
           viewBox="0 0 20 20"
