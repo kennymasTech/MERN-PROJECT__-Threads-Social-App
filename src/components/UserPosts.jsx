@@ -58,7 +58,7 @@ const UserPosts = () => {
             <Image src="/post3.png" w={'full'} />
           </Box>
 
-          
+          <Flex></Flex>
         </Flex>
       </Flex>
     </Link>
