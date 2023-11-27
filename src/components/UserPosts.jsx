@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Reactions from "./Reactions";
 import { useState } from "react";
 
-const UserPosts = ({userAvatar, useName, postTitle, postImg}) => {
+const UserPosts = ({likes, replies, postTitle, postImg}) => {
   const [liked, setLiked] = useState(false);
 
   return (
@@ -57,14 +57,14 @@ const UserPosts = ({userAvatar, useName, postTitle, postImg}) => {
             </Flex>
           </Flex>
 
-          <Text fontSize={"sm"}>Hello Thread!!!</Text>
+          <Text>{postTitle}</Text>
           <Box
             overflow={"hidden"}
             borderRadius={6}
             border={"1px solid"}
             borderColor={"gray.light"}
           >
-            <Image src="/post3.png" w={"full"} />
+            <Image src={postImg} w={"full"} />
           </Box>
 
           <Flex>
@@ -77,9 +77,9 @@ const UserPosts = ({userAvatar, useName, postTitle, postImg}) => {
             fontSize={"sm"}
             alignItems={"center"}
           >
-            <Text>12 Replies</Text>
+            <Text>{replies} Replies</Text>
             <Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}></Box>
-            <Text>540 likes</Text>
+            <Text>{likes} likes</Text>
           </Flex>
         </Flex>
       </Flex>
