@@ -16,7 +16,7 @@ const UserHeader = () => {
         const currentURL = window.location.href;
         navigator.clipboard.writeText(currentURL).then(() => {
             toast({
-                title: "URL Copied",
+                title: "Success",
                 description: "Profile link copied",
                 status: "success",
                 duration: 3000,
