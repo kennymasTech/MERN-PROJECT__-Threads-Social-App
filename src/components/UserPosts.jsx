@@ -41,19 +41,22 @@ const UserPosts = () => {
         </Flex>
 
         <Flex flex={1} flexDir={"column"} gap={2}>
-          <Flex w={'full'} justifyContent={'space-between'}>
-          <Flex alignItems={"center"} w={'full'}>
-            <Text>AliuMusa</Text>
-            <Image src="/verified.png" ml={1} w={4} h={4} />
-          </Flex>
+          <Flex w={"full"} justifyContent={"space-between"}>
+            <Flex alignItems={"center"} w={"full"}>
+              <Text>AliuMusa</Text>
+              <Image src="/verified.png" ml={1} w={4} h={4} />
+            </Flex>
 
-          <Flex alignItems={"center"} gap={'4'}>
-            <Text>1day</Text>
-            <BsThreeDots />
-          </Flex>
+            <Flex alignItems={"center"} gap={"4"}>
+              <Text>1day</Text>
+              <BsThreeDots />
+            </Flex>
           </Flex>
 
           <Text>Hello Thread!!!</Text>
+          <Box>
+            <Image src="/aliumusa.jpg" />
+          </Box>
         </Flex>
       </Flex>
     </Link>
