@@ -1,8 +1,11 @@
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
 
-const Reactions = () => {
+const Reactions = ({ liked, setLiked}) => {
   return (
-    <div>Reactions</div>
+    <>
+        <Flex cursor={'pointer'} gap={3} my={2}></Flex>
+    </>
   )
 }
 
