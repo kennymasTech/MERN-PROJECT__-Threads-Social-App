@@ -2,9 +2,10 @@ import { Avatar, Box, Flex, Image, Text } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import Reactions from "./Reactions";
+import { useState } from "react";
 
 const UserPosts = () => {
-    const 
+    const [liked, setLiked] = useState(false)
 
   return (
     <Link to={"/aliumusa/post/1"}>
