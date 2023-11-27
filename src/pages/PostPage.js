@@ -1,9 +1,16 @@
 
+import { Flex } from '@chakra-ui/react';
 import React from 'react';
 
 const PostPage = () => {
   return (
-    <div>PostPage</div>
+    <>
+      <Flex>
+        <Flex>
+          
+        </Flex>
+      </Flex>
+    </>
   )
 };
 
