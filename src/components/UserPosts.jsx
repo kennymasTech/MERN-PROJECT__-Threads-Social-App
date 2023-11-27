@@ -71,9 +71,14 @@ const UserPosts = () => {
             <Reactions liked={liked} setLiked={setLiked} />
           </Flex>
 
-          <Flex gap={2} color={'gray.light'} fontSize={'sm'} alignItems={'center'}>
+          <Flex
+            gap={2}
+            color={"gray.light"}
+            fontSize={"sm"}
+            alignItems={"center"}
+          >
             <Text>12 Replies</Text>
-            <Box w={0.5} h={0.5} borderRadius={'full'} bg={'gray.light'}></Box>
+            <Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}></Box>
             <Text>540 likes</Text>
           </Flex>
         </Flex>
