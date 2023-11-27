@@ -55,7 +55,7 @@ const UserPosts = () => {
 
           <Text>Hello Thread!!!</Text>
           <Box>
-            <Image src="/aliumusa.jpg" />
+            <Image src="/aliumusa.jpeg" />
           </Box>
         </Flex>
       </Flex>
