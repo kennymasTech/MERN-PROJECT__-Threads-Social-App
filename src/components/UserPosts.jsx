@@ -58,7 +58,8 @@ const UserPosts = ({likes, replies, postTitle, postImg}) => {
           </Flex>
 
           <Text>{postTitle}</Text>
-          <Box
+          {postImg && (
+            <Box
             overflow={"hidden"}
             borderRadius={6}
             border={"1px solid"}
@@ -66,6 +67,7 @@ const UserPosts = ({likes, replies, postTitle, postImg}) => {
           >
             <Image src={postImg} w={"full"} />
           </Box>
+          )}
 
           <Flex>
             <Reactions liked={liked} setLiked={setLiked} />

@@ -1,4 +1,12 @@
-import { Avatar, Box, Flex, Image, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  Flex,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import Reactions from "../components/Reactions";
@@ -54,6 +62,21 @@ const PostPage = () => {
         <Box w={0.5} h={0.5} borderRadius={"full"} bg={"gray.light"}></Box>
         <Text>{55 + (liked ? 1 : 0)} likes</Text>
       </Flex>
+
+      <Divider my={4} />
+
+      <Flex justifyContent={"space-between"}>
+        <Flex alignItems={"center"} gap={2}>
+          <Text fontSize={"2x1"}> 👋 </Text>
+          <Text color={"gray.light"}>
+            Get the app to like, reply and post{" "}
+          </Text>
+        </Flex>  
+        <Button> Get </Button>
+      </Flex>
+    
+
+      <Divider my={4} />
     </>
   );
 };
