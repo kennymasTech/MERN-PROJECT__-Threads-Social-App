@@ -40,15 +40,15 @@ const UserPosts = () => {
           </Box>
         </Flex>
 
-        <Flex flex={1} flexDir={'column'} w={'full'}>
-            <Flex alignItems={'center'} flexDir={'row'}>
-                <Text>AliuMusa</Text>
-                <Image src="/verified.png" ml={1} w={4} h={4} />
-            </Flex>
-            <Flex alignItems={'center'} flexDir={'row'}>
-                <Text>1 day</Text>
-               <BsThreeDots/>
-            </Flex>
+        <Flex flex={1} flexDir={"column"} w={"full"}>
+          <Flex alignItems={"center"} flexDir={"row"}>
+            <Text>AliuMusa</Text>
+            <Image src="/verified.png" ml={1} w={4} h={4} />
+          </Flex>
+          <Flex alignItems={"center"} flexDir={"row"}>
+            <Text>1 day</Text>
+            <BsThreeDots />
+          </Flex>
         </Flex>
       </Flex>
     </Link>
