@@ -1,5 +1,5 @@
 
-import { Flex } from '@chakra-ui/react'aa
+import { Flex } from '@chakra-ui/react'a
 
 const Reactions = ({ liked, setLiked}) => {
   return (
