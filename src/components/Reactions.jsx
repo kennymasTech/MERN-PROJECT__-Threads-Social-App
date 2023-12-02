@@ -33,4 +33,4 @@ const Reactions = ({ liked, setLiked}) => {
   )
 }
 
-export default Reactions
+export default Reactions;
