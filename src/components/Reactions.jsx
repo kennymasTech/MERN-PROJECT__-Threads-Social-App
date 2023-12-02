@@ -1,9 +1,5 @@
 
 import { Flex } from '@chakra-ui/react';
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { likePost, unlikePost } from '../redux/actions/postActions';
-import { useNavigate } from '
 
 const Reactions = ({ liked, setLiked}) => {
   return (
