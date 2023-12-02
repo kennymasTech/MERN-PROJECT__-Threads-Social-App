@@ -31,6 +31,6 @@ const Reactions = ({ liked, setLiked}) => {
         </Flex>
     </>
   )
-}
+};
 
 export default Reactions;
