@@ -23,8 +23,7 @@ export default function SignupCard() {
   return (
     <Flex
       align={'center'}
-      justify={'center'}
-      w={"464px"}>
+      justify={'center'}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'} w={"full"}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
