@@ -86,7 +86,10 @@ export default function SignupCard() {
               <Box>
                 <FormControl isRequired>
                   <FormLabel>Username</FormLabel>
-                  <Input type="text" />
+                  <Input type="text"
+                  onChange={(e) => setInputs({...inputs, name: e.target.value})}
+                  value={inputs.name}
+                   />
                 </FormControl>
               </Box>
             </HStack>
