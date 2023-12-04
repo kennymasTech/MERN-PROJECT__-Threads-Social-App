@@ -71,7 +71,7 @@ import {
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Don't Have An Accout? <Link color={'blue.400'}>Login</Link>
+                  Don&apos;t Have An Accout? <Link color={'blue.400'}>Sign Up</Link>
                 </Text>
               </Stack>
             </Stack>
