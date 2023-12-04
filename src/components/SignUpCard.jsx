@@ -77,7 +77,9 @@ export default function SignupCard() {
               <Box>
                 <FormControl isRequired>
                   <FormLabel>Full Name</FormLabel>
-                  <Input type="text" />
+                  <Input type="text"
+                    onChange={(e) => setInputs({...inputs, name: e.target.value})}
+                   />
                 </FormControl>
               </Box>
               <Box>
