@@ -19,3 +19,5 @@ const useShowToast = () => {
 
     return showToast
 }
+
+export default useShowToast
