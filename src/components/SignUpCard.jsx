@@ -85,7 +85,7 @@ export default function SignupCard() {
               </Box>
               <Box>
                 <FormControl isRequired>
-                  <FormLabel>Last Name</FormLabel>
+                  <FormLabel>Username</FormLabel>
                   <Input type="text" />
                 </FormControl>
               </Box>
