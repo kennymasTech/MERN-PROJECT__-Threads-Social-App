@@ -5,7 +5,6 @@ import {
     FormLabel,
     Input,
     InputGroup,
-    HStack,
     InputRightElement,
     Stack,
     Button,
@@ -41,7 +40,7 @@ import {
                 <FormLabel>Username</FormLabel>
                 <Input type="text" />
               </FormControl>
-              <FormControl id="password" isRequired>
+              <FormControl isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
                   <Input type={showPassword ? 'text' : 'password'} />
