@@ -37,9 +37,9 @@ import {
             p={8}>
             <Stack spacing={4}>
               
-              <FormControl id="email" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+              <FormControl isRequired>
+                <FormLabel>Username</FormLabel>
+                <Input type="text" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
