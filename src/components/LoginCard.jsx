@@ -36,20 +36,7 @@ import {
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-              <HStack>
-                <Box>
-                  <FormControl id="firstName" isRequired>
-                    <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
-                  </FormControl>
-                </Box>
-                <Box>
-                  <FormControl id="lastName">
-                    <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
-                  </FormControl>
-                </Box>
-              </HStack>
+              
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
                 <Input type="email" />
@@ -76,7 +63,7 @@ import {
                   _hover={{
                     bg: useColorModeValue('gray.700', 'gray.800'),
                   }}>
-                  Log In
+                  LogIn
                 </Button>
               </Stack>
               <Stack pt={6}>
