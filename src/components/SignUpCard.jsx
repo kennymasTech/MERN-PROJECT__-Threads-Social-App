@@ -25,7 +25,7 @@ export default function SignupCard() {
       align={'center'}
       justify={'center'}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Stack align={'center'}>
+        <Stack align={'center'} w={"full"}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
             Sign up
           </Heading>
