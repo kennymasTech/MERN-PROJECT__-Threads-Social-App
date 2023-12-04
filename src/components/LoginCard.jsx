@@ -15,11 +15,12 @@ import {
   } from '@chakra-ui/react'
   import { useState } from 'react'
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
-import { useSetRecoilState } from 'recoil'
+  import { useSetRecoilState } from 'recoil'
+  import authScreenAtom from '../atoms/authAtom'
   
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false)
-    const setAuthScreen = useSetRecoilState(useScreenAtom)
+    const setAuthScreen = useSetRecoilState(authScreenAtom)
   
     return (
       <Flex
