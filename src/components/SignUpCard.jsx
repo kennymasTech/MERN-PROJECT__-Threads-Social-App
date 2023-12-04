@@ -99,10 +99,13 @@ export default function SignupCard() {
               onChange={(e) => setInputs({...inputs, email: e.target.value})}
               value={inputs.email} />
             </FormControl>
-            <FormControl id="password" isRequired>
+            <FormControl isRequired>
               <FormLabel>Password</FormLabel>
               <InputGroup>
-                <Input type={showPassword ? 'text' : 'password'} />
+                <Input type={showPassword ? 'text' : 'password'}
+                onChange={(e) => setInputs({...inputs, password: e.target.value})}
+                value={inputs.password}
+                 />
                 <InputRightElement h={'full'}>
                   <Button
                     variant={'ghost'}
