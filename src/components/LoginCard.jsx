@@ -15,9 +15,11 @@ import {
   } from '@chakra-ui/react'
   import { useState } from 'react'
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import { useSetRecoilState } from 'recoil'
   
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false)
+    const setAuthScreen = useSetRecoilState(useScreenAtom)
   
     return (
       <Flex
@@ -71,7 +73,7 @@ import {
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Don&apos;t Have An Accout? {" "} <Link color={'blue.400'}>Sign Up</Link>
+                  Don&apos;t Have An Accout? {" "} <Link color={'blue.400'} onClick={() => setAuthScreen("signup")}>Sign Up</Link>
                 </Text>
               </Stack>
             </Stack>
