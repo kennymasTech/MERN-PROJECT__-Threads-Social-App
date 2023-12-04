@@ -87,15 +87,17 @@ export default function SignupCard() {
                 <FormControl isRequired>
                   <FormLabel>Username</FormLabel>
                   <Input type="text"
-                  onChange={(e) => setInputs({...inputs, name: e.target.value})}
-                  value={inputs.name}
+                  onChange={(e) => setInputs({...inputs, username: e.target.value})}
+                  value={inputs.username}
                    />
                 </FormControl>
               </Box>
             </HStack>
-            <FormControl id="email" isRequired>
+            <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input type="email"
+              onChange={(e) => setInputs({...inputs, email: e.target.value})}
+              value={inputs.email} />
             </FormControl>
             <FormControl id="password" isRequired>
               <FormLabel>Password</FormLabel>
