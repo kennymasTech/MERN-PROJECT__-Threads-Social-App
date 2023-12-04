@@ -22,6 +22,12 @@ import authScreenAtom from '../atoms/authAtom'
 export default function SignupCard() {
   const [showPassword, setShowPassword] = useState(false)
   const setAuthScreen = useSetRecoilState(authScreenAtom)
+  const [inputs, setInputs] = useState({
+    name: "",
+    username: "",
+    email: "",
+    password: ""
+  })
 
   return (
     <Flex
