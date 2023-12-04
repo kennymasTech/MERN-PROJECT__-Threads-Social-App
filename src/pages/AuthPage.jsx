@@ -9,4 +9,4 @@ const AuthPage = () => {
   return <> {authScreenState === "login" ? <LoginCard/> : <SignupCard/> } </>
 }
 
-export default AuthPage
+export default AuthPage;
