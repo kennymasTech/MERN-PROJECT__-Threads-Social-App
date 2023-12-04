@@ -36,7 +36,7 @@ import {
             p={8}
             w={{
                 base: "full",
-                sm:
+                sm: "400px"
             }}>
             <Stack spacing={4}>
               
