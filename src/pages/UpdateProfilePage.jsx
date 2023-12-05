@@ -26,6 +26,8 @@ export default function UpdateProfilePage() {
         bio: "",
         password: "",
     })
+
+    console.log( user, "User Is Here ");
   return (
     <Flex
       align={"center"}
