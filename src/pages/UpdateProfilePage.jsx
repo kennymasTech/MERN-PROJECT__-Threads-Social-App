@@ -49,11 +49,12 @@ export default function UpdateProfilePage() {
         <FormControl >
           <Stack direction={["column", "row"]} spacing={6}>
             <Center>
-              <Avatar size="xl" src="https://bit.ly/sage-adebayo" />
+              <Avatar size="xl" boxShadow={"md"} src={user.profilePic} />
                 
             </Center>
             <Center w="full">
-              <Button w="full">Change Avartar</Button>
+              <Button onClick={() => fileRef.current.click()} w="full">Change Avartar</Button>
+              <Input type="file" hidden ref={fileRef}
             </Center>
           </Stack>
         </FormControl>
