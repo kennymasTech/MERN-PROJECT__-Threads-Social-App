@@ -1,17 +1,27 @@
-import e from "express"
-import { useState } from "react"
+import { useState } from "react";
+import useShowToast from "./useShowToast";
 
+const usePreviewImg = () => {
+  const [imgUrl, setImgUrl] = useState(null);
+  const showToast = useShowToast();
 
-const usePreviewimg = () => {
-    const [ imgUrl, seiImgUrl ] = useState(null)
+  const handleImgChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
 
-    const handleImgChange = (e) => {
-        const file = e.target.files[0]
-        console.log(file);
+      reader.onloadend = () => {
+        setImgUrl(reader.result);
+      };
 
+      reader.readAsDataURL(file);
+    } else {
+      showToast("Invalid File Type", "Please select an image file", "error");
+      setImgUrl(null);
     }
+  };
+  console.log(imgUrl);
+  return { handleImgChange, imgUrl };
+};
 
-    return {handleImgChange, imgUrl}
-}
-
-export default usePreviewimg
+export default usePreviewImg;
