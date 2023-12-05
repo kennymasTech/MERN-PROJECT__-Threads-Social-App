@@ -54,7 +54,7 @@ export default function UpdateProfilePage() {
             </Center>
             <Center w="full">
               <Button onClick={() => fileRef.current.click()} w="full">Change Avartar</Button>
-              <Input type="file" hidden ref={fileRef}
+              <Input type="file" hidden ref={fileRef} />
             </Center>
           </Stack>
         </FormControl>
