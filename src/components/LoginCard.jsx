@@ -13,10 +13,11 @@ import {
     useColorModeValue,
     Link,
   } from '@chakra-ui/react'
-  import { useState } from 'react'
-  import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
-  import { useSetRecoilState } from 'recoil'
-  import authScreenAtom from '../atoms/authAtom'
+import { useState } from 'react'
+import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons'
+import { useSetRecoilState } from 'recoil'
+import authScreenAtom from '../atoms/authAtom'
+import useShowToast from '../hooks/useShowToast'
   
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false)
@@ -26,13 +27,15 @@ import {
        password: "",
     })
 
-const handleLogin = async () => {
-  try {
-    console.log(inputs);
-  } catch (error) {
-    
-  }
-}
+    const showToast = useShowToast()
+
+    const handleLogin = async () => {
+      try {
+        console.log(inputs);
+      } catch (error) {
+        
+      }
+    }
 
   
     return (
