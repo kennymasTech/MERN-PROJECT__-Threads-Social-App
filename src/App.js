@@ -6,8 +6,13 @@ import PostPage from "./pages/PostPage";
 import Hearder from "./components/Hearder";
 import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage";
+import { useRecoilValue } from "recoil";
+import userAtom from "./atoms/userAtom";
 
 const App = () => {
+  const user = useRecoilValue(userAtom)
+  console.log(user);
+
   return (
     <Container maxW="620px">
       <Hearder />
