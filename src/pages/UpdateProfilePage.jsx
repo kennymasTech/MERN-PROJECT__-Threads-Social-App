@@ -19,7 +19,7 @@ import userAtom from '../atoms/userAtom';
 
 export default function UpdateProfilePage() {
     const [ user, setUser ] = useRecoilState(userAtom)
-    const [ inputs, serInputs ] = useState({
+    const [ inputs, setInputs ] = useState({
         name: user.name,
         username: user.username,
         email: user.email,
