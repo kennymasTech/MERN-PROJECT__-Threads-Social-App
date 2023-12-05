@@ -48,9 +48,9 @@ export default function UpdateProfilePage() {
           </Stack>
         </FormControl>
         <FormControl isRequired>
-          <FormLabel>User name</FormLabel>
+          <FormLabel>Full name</FormLabel>
           <Input
-            placeholder="UserName"
+            placeholder="your fullname"
             _placeholder={{ color: "gray.500" }}
             type="text"
           />
@@ -69,6 +69,14 @@ export default function UpdateProfilePage() {
             placeholder="your-email@example.com"
             _placeholder={{ color: "gray.500" }}
             type="email"
+          />
+        </FormControl>
+        <FormControl isRequired>
+          <FormLabel>Bio</FormLabel>
+          <Input
+            placeholder="your bio..."
+            _placeholder={{ color: "gray.500" }}
+            type="textarea"
           />
         </FormControl>
         <FormControl isRequired>
