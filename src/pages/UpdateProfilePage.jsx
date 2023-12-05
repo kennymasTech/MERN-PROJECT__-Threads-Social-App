@@ -10,7 +10,6 @@ import {
   Input,
   Stack,
   useColorModeValue,
-  HStack,
   Avatar,
   AvatarBadge,
   IconButton,
