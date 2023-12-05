@@ -11,7 +11,6 @@ import {
   Stack,
   useColorModeValue,
   Avatar,
-  IconButton,
   Center,
 } from "@chakra-ui/react";
 
