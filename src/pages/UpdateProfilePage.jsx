@@ -13,7 +13,7 @@ import {
     Avatar,
     Center,
 } from "@chakra-ui/react";
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import userAtom from '../atoms/userAtom';
 
@@ -26,6 +26,8 @@ export default function UpdateProfilePage() {
         bio: user.bio,
         password: "",
     })
+
+    const fileRef = useRef(null)
 
     console.log( user, "User Is Here ");
   return (
