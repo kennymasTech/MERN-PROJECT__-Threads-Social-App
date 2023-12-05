@@ -47,6 +47,8 @@ import useShowToast from '../hooks/useShowToast'
             showToast("Error", data.error, "error")
             return;
         } 
+
+        localStorage.setItem("user-threads", JSON.stringify(data))
         
       } catch (error) {
           showToast("Error", error, "error")
