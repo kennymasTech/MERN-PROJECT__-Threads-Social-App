@@ -37,7 +37,6 @@ export default function UpdateProfilePage() {
           User Profile Edit
         </Heading>
         <FormControl id="userName">
-          <FormLabel>User Icon</FormLabel>
           <Stack direction={["column", "row"]} spacing={6}>
             <Center>
               <Avatar size="xl" src="https://bit.ly/sage-adebayo">
