@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { SmallCloseIcon } from '@chakra-ui/icons'
 
-export default function UserProfileEdit() {
+export default function UpdateProfilePage() {
   return (
     <Flex
       minH={'100vh'}
