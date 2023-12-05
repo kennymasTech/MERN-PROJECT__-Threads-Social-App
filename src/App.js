@@ -1,6 +1,6 @@
 
 import { Container } from "@chakra-ui/react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import UserPage from "./pages/UserPage";
 import PostPage from "./pages/PostPage";
 import Hearder from "./components/Hearder";
@@ -17,7 +17,7 @@ const App = () => {
     <Container maxW="620px">
       <Hearder />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={ user ? <HomePage /> : <Navigate to="/auth"/> } />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/:username" element={<UserPage />} />
         <Route path="/:username/post/:pid" element={<PostPage />} />
