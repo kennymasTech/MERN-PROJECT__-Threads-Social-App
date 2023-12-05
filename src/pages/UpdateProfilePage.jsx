@@ -60,7 +60,7 @@ export default function UpdateProfilePage() {
         <FormControl isRequired>
           <FormLabel>Full name</FormLabel>
           <Input
-            placeholder="your fullname"
+            placeholder="Fullname"
             _placeholder={{ color: "gray.500" }}
             type="text"
           />
@@ -76,7 +76,7 @@ export default function UpdateProfilePage() {
         <FormControl isRequired>
           <FormLabel>Email address</FormLabel>
           <Input
-            placeholder="your-email@example.com"
+            placeholder="email@example.com"
             _placeholder={{ color: "gray.500" }}
             type="email"
           />
@@ -84,7 +84,7 @@ export default function UpdateProfilePage() {
         <FormControl isRequired>
           <FormLabel>Bio</FormLabel>
           <Input
-            placeholder="your bio..."
+            placeholder="Bio..."
             _placeholder={{ color: "gray.500" }}
             type="textarea"
           />
@@ -92,7 +92,7 @@ export default function UpdateProfilePage() {
         <FormControl isRequired>
           <FormLabel>Password</FormLabel>
           <Input
-            placeholder="password"
+            placeholder="Password"
             _placeholder={{ color: "gray.500" }}
             type="password"
           />
