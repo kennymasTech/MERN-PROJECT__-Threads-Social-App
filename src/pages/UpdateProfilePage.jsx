@@ -1,12 +1,12 @@
 
 
-const UpdateProfilePage = () => {
-  return (
-    <div>UpdateProfilePage</div>
-  )
-}
+// const UpdateProfilePage = () => {
+//   return (
+//     <div>UpdateProfilePage</div>
+//   )
+// }
 
-export default UpdateProfilePage
+// export default UpdateProfilePage
 
 'use client'
 
