@@ -73,6 +73,8 @@ export default function UpdateProfilePage() {
             placeholder="UserName"
             _placeholder={{ color: "gray.500" }}
             type="text"
+            value={inputs.username}
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </FormControl>
         <FormControl isRequired>
@@ -81,6 +83,8 @@ export default function UpdateProfilePage() {
             placeholder="email@example.com"
             _placeholder={{ color: "gray.500" }}
             type="email"
+            value={inputs.email}
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </FormControl>
         <FormControl isRequired>
@@ -89,6 +93,8 @@ export default function UpdateProfilePage() {
             placeholder="Bio..."
             _placeholder={{ color: "gray.500" }}
             type="textarea"
+            value={inputs.bio}
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </FormControl>
         <FormControl isRequired>
@@ -97,6 +103,8 @@ export default function UpdateProfilePage() {
             placeholder="Password"
             _placeholder={{ color: "gray.500" }}
             type="password"
+            value={inputs.password}
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </FormControl>
         <Stack spacing={6} direction={["column", "row"]}>
