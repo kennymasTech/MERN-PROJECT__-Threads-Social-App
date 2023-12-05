@@ -133,7 +133,7 @@ export default function SignupCard() {
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link color={'blue.400'} onClick={() => setAuthScreen("signup")}>Login</Link>
+                Already a user? <Link color={'blue.400'} onClick={() => setAuthScreen("login")}>Login</Link>
               </Text>
             </Stack>
           </Stack>

@@ -20,7 +20,7 @@ const LogoutButton = () => {
             const data = await res.json()
 
             if(data.error) {
-                showToast("Error", Error, "error")
+                showToast("Error", data.error, "error")
                 return;
             } 
             localStorage.removeItem("user-threads")
@@ -31,7 +31,7 @@ const LogoutButton = () => {
     
     }
   return (
-    <Button position={"fixed"} top={"30px"} right={"30px"} size={"sm"}>
+    <Button position={"fixed"} top={"30px"} right={"30px"} size={"sm"} onClick={handleLogout} >
         <AiOutlineLogout size={20} />
     </Button>
   )
