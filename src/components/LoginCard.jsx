@@ -21,6 +21,19 @@ import {
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false)
     const setAuthScreen = useSetRecoilState(authScreenAtom)
+    const [inputs, setInputs] = useState({
+       username: "",
+       password: "",
+    })
+
+const handleLogin = async () => {
+  try {
+    console.log(inputs);
+  } catch (error) {
+    
+  }
+}
+
   
     return (
       <Flex
