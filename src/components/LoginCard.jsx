@@ -46,12 +46,8 @@ import useShowToast from '../hooks/useShowToast'
         if(data.error) {
             showToast("Error", data.error, "error")
             return;
-        } else {
-            showToast("Success", "Logged in successfully", "success")
-            setAuthScreen("home")
-        }
+        } 
         
-        console.log(inputs);
       } catch (error) {
           showToast("Error", error, "error")
       }
