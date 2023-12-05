@@ -63,6 +63,8 @@ export default function UpdateProfilePage() {
             placeholder="Fullname"
             _placeholder={{ color: "gray.500" }}
             type="text"
+            value={inputs.name}
+            onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
           />
         </FormControl>
         <FormControl isRequired>
