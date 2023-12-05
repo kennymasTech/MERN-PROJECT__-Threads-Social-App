@@ -39,12 +39,13 @@ import useShowToast from '../hooks/useShowToast'
             body: JSON.stringify(inputs)
 
         })
-        
+
         const data = await res.json()
         console.log(data)
 
         if(data.error) {
             showToast("Error", data.error, "error")
+            return;
         } else {
             showToast("Success", "Logged in successfully", "success")
             setAuthScreen("home")
