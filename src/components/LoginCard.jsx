@@ -45,7 +45,7 @@ import {
               
               <FormControl isRequired>
                 <FormLabel>Username</FormLabel>
-                <Input type="text" />
+                <Input type="text" value={inputs.username} onChange={(e) => setInputs((inputs) => ({...inputs, username: e.target.value}))} />
               </FormControl>
               <FormControl isRequired>
                 <FormLabel>Password</FormLabel>
@@ -68,7 +68,9 @@ import {
                   color={'white'}
                   _hover={{
                     bg: useColorModeValue('gray.700', 'gray.800'),
-                  }}>
+                  }}
+                  onClick={handleLogin}
+                  >
                   LogIn
                 </Button>
               </Stack>
