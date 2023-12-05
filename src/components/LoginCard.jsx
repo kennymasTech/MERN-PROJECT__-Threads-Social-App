@@ -31,9 +31,26 @@ import useShowToast from '../hooks/useShowToast'
 
     const handleLogin = async () => {
       try {
+        const res = await fetch("/api/users/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(inputs)
+        })
+        const data = await res.json()
+        console.log(data)
+
+        if(data.error) {
+            showToast("Error", data.error, "error")
+        } else {
+            showToast("Success", "Logged in successfully", "success")
+            setAuthScreen("home")
+        }
+        
         console.log(inputs);
       } catch (error) {
-        
+          showToast("Error", error, "error")
       }
     }
 
