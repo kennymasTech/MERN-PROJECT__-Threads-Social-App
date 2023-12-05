@@ -20,10 +20,10 @@ import userAtom from '../atoms/userAtom';
 export default function UpdateProfilePage() {
     const [ user, setUser ] = useRecoilState(userAtom)
     const [ inputs, serInputs ] = useState({
-        name: "Abiodun Kennymas",
-        username: "kennymas",
-        email: "kennymas4luv@gmail.com",
-        bio: "User",
+        name: user.name,
+        username: user.username,
+        email: user.email,
+        bio: user.bio,
         password: "",
     })
 
