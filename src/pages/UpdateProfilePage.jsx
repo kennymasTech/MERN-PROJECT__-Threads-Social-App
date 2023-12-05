@@ -2,19 +2,30 @@
 "use client";
 
 import {
-  Button,
-  Flex,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-  Stack,
-  useColorModeValue,
-  Avatar,
-  Center,
+    Button,
+    Flex,
+    FormControl,
+    FormLabel,
+    Heading,
+    Input,
+    Stack,
+    useColorModeValue,
+    Avatar,
+    Center,
 } from "@chakra-ui/react";
+import { useState } from 'react';
+import { useRecoilState } from 'recoil';
+import userAtom from '../atoms/userAtom';
 
 export default function UpdateProfilePage() {
+    const [ user, setUser ] = useRecoilState(userAtom)
+    const [ inputs, serInputs ] = useState({
+        name: "",
+        username: "",
+        email: "",
+        bio: "",
+        password: "",
+    })
   return (
     <Flex
       align={"center"}
