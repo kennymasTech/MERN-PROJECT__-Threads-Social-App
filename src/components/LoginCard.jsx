@@ -37,7 +37,9 @@ import useShowToast from '../hooks/useShowToast'
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(inputs)
+
         })
+        
         const data = await res.json()
         console.log(data)
 
