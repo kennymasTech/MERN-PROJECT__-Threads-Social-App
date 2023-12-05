@@ -96,11 +96,11 @@ export default function UpdateProfilePage() {
             Cancel
           </Button>
           <Button
-            bg={"blue.400"}
+            bg={"green.400"}
             color={"white"}
             w="full"
             _hover={{
-              bg: "blue.500",
+              bg: "green.500",
             }}
           >
             Submit
