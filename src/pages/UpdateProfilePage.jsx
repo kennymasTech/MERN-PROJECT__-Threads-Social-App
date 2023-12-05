@@ -20,10 +20,8 @@ import { SmallCloseIcon } from "@chakra-ui/icons";
 export default function UpdateProfilePage() {
   return (
     <Flex
-      minH={"100vh"}
       align={"center"}
       justify={"center"}
-      bg={useColorModeValue("gray.50", "gray.800")}
     >
       <Stack
         spacing={4}
