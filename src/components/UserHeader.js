@@ -16,6 +16,7 @@ const UserHeader = ({ user }) => {
 	const currentUser = useRecoilValue(userAtom);
    const [following, setFollowing] = useState(user.followers.includes(currentUser._id))
    const showToast = useShowToast()
+   const [ updating, setUpdating ] = useState(false)
 
 	const copyURL = () => {
 		const currentURL = window.location.href;
@@ -31,6 +32,14 @@ const UserHeader = ({ user }) => {
 	};
 
    const handleFollowUnfollow = async() => {
+      if(!currentUser) {
+        showToast("Error", "Please login to Follow", "error")
+        return
+      }
+
+      if(updating) return
+      setUpdating(true)
+
       try {
          const res = await fetch(`/api/users/follow/${user._id}`, {
             method: "POST",
@@ -57,6 +66,8 @@ const UserHeader = ({ user }) => {
          
       } catch (error) {
          showToast("Error", error, "error")
+      } finally {
+        setUpdating(false)
       }
    }
 
