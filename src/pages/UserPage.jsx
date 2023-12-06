@@ -10,7 +10,7 @@ const UserPage = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await fetch(`api/users/profile/${username}`);
+        const response = await fetch(`/api/users/profile/${username}`);
         const data = await response.json();
         console.log(data);
       } catch (error) {
