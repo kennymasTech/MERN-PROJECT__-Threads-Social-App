@@ -1,7 +1,7 @@
 import { Box, Flex, Text, VStack, Link } from "@chakra-ui/layout";
 import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
 import { Portal } from "@chakra-ui/portal";
-import { Avatar } from "@chakra-ui/react";
+import { Avatar, Button } from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 import { useToast } from "@chakra-ui/toast";
@@ -55,6 +55,9 @@ const UserHeader = ({user}) => {
         </Box>
       </Flex>
       <Text>{user.bio}</Text>
+
+      <Button size={"sm"} >Update Profile</Button>
+      
       <Flex w={"full"} justifyContent={"space-between"}>
         <Flex gap={2} alignItems={"center"}>
           <Text color={"gray.light"}>{user.followers.length} Followers</Text>
