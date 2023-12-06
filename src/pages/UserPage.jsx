@@ -17,7 +17,7 @@ const UserPage = () => {
         console.log(error);
       }
     }
-  }, [])
+  }, [username])
 
   return (
     <>
