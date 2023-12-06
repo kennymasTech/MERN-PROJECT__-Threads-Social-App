@@ -17,11 +17,13 @@ const UserPage = () => {
         console.log(error);
       }
     }
+    getUser()
+
   }, [username])
 
   return (
     <>
-      <UserHeader />
+      <UserHeader user={user} />
       <UserPosts
         likes={200}
         replies={70}
