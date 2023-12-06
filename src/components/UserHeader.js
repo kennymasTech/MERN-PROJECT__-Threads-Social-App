@@ -5,9 +5,12 @@ import { Avatar } from "@chakra-ui/react";
 import { BsInstagram } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 import { useToast } from "@chakra-ui/toast";
+import { useRecoilValue } from "recoil";
+import userAtom from "../atoms/userAtom";
 
 const UserHeader = ({user}) => {
   const toast = useToast();
+  const currentUser = useRecoilValue(userAtom)
 
   const copyURL = () => {
     const currentURL = window.location.href;
