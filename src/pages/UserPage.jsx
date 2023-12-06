@@ -7,7 +7,7 @@ import useShowToast from '../hooks/useShowToast';
 const UserPage = () => {
   const [ user, setUser ] = useState(null);
   const { username } = useParams();
-  const showToast = useShowToast
+  const showToast = useShowToast()
 
   useEffect(() => {
     const getUser = async () => {
