@@ -15,7 +15,7 @@ import {
 import { useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import userAtom from "../atoms/userAtom";
-import usePreviewimg from "../hooks/usePreviewImg";
+import usePreviewImg from "../hooks/usePreviewImg";
 import useShowToast from "../hooks/useShowToast";
 
 export default function UpdateProfilePage() {
@@ -29,45 +29,26 @@ export default function UpdateProfilePage() {
   });
 
   const fileRef = useRef(null);
-  const { imgUrl, handleImgChange } = usePreviewimg();
+  const { imgUrl, handleImgChange } = usePreviewImg();
   const showToast = useShowToast();
+  
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-        const res = await fetch(`/api/users/update/${user.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({...inputs, profilePic: imgUrl})
-
-      });
-
-      const data = await res.json();
-      console.log(data);
-
-    //   if (data.error) {
-    //     showToast("Error", data.error, "error");
-    //     return;
-    //   }
-
-    //   setUser(data);
-    //   showToast("Success", "Profile Updated", "success");
-    //   setInputs({
-    //     name: data.name,
-    //     username: data.username,
-    //     email: data.email,
-    //     bio: data.bio,
-    //     password: "",
-    //   });
-      
-    //   console.log(inputs);
-    } catch (error) {
-      showToast("Error", error, "error");
-    }
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const res = await fetch(`api/users/update/${user._id}`, {
+            method: "PUT",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ ...inputs, profilePic: imgUrl }),
+          });
+          const data = await res.json();
+          console.log(data);
+        } catch (error) {
+          showToast("Error", error, "error");
+        }
+      };
 
   return (
     <form onSubmit={handleSubmit}>
