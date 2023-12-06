@@ -39,6 +39,8 @@ const UserHeader = ({user}) => {
           }
         })
         const data = await res.json()
+        console.log(data);
+        
       } catch (error) {
         showToast("Error", error, "error")
       }
