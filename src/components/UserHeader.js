@@ -44,6 +44,14 @@ const UserHeader = ({ user }) => {
             return
          }
 
+         if(following) {
+            showToast("Success", `You have unfollowed ${user.name}`, "success")
+            user.followers.pop()
+         } else {
+            showToast("Success", `You have followed ${user.name}`, "success")
+            user.followers.push(currentUser._id)
+         }
+
          setFollowing(!following)
          console.log(data)
          
@@ -158,5 +166,3 @@ const UserHeader = ({ user }) => {
 };
 
 export default UserHeader;
-
-
