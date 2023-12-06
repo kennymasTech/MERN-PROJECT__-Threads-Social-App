@@ -8,10 +8,13 @@ import { useToast } from "@chakra-ui/toast";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { Link as RouterLink } from "react-router-dom";
+import { useState } from "react";
 
 const UserHeader = ({user}) => {
   const toast = useToast();
   const currentUser = useRecoilValue(userAtom)
+  const [ following, setFollowing ] = useState(user.followers.includes(currentUser._id))
+  console.log(following);
 
   const copyURL = () => {
     const currentURL = window.location.href;
@@ -25,6 +28,14 @@ const UserHeader = ({user}) => {
       });
     });
   };
+
+  const handleFollowUnFollow = async () => {
+      try {
+        
+      } catch (error) {
+        
+      }
+  }
 
   return (
     <VStack gap={4} alignItems={"start"}>
@@ -62,10 +73,10 @@ const UserHeader = ({user}) => {
       <Button size={"sm"}>Update Profile</Button>
       </Link>
       )}
-      
+
       {currentUser._id === user._id && (
-      <Link as={RouterLink} to="/update">
-      <Button size={"sm"}>Update Profile</Button>
+      <Link as={RouterLink} >
+      <Button size={"sm"} onClick={handleFollowUnFollow}>{following ? "UnFollow" : "Follow"}</Button>
       </Link>
       )}
 
