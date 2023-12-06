@@ -48,6 +48,7 @@ export default function UpdateProfilePage() {
         return;
       }
       showToast("Success", "Profile updated successfully", "success");
+      setUser(data);
     } catch (error) {
       showToast("Error", error, "error");
     }
