@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import UserHeader from "../components/UserHeader";
 import UserPosts from "../components/UserPosts";
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const UserPage = () => {
   const [ user, setUser ] = useState(null);
