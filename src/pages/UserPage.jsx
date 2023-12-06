@@ -18,8 +18,8 @@ const UserPage = () => {
         if(data.error) {
           showToast("Error", data.error, "error")
           return;
-        
         }
+        setUser(data);
 
       } catch (error) {
         console.log(error);
