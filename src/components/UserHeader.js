@@ -33,8 +33,12 @@ const UserHeader = ({user}) => {
   const handleFollowUnFollow = async () => {
       try {
         const res = await fetch(`/api/users/follow/${user._id}`, {
-          
+          method: "POST",
+          headers: {
+            "Content-Type" : "application/json"
+          }
         })
+        const data = await res.json()
       } catch (error) {
         showToast("Error", error, "error")
       }
