@@ -103,7 +103,7 @@ export default function UpdateProfilePage() {
               _placeholder={{ color: "gray.500" }}
               type="text"
               value={inputs.username}
-              onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+              onChange={(e) => setInputs({ ...inputs, username: e.target.value })}
             />
           </FormControl>
           <FormControl>
@@ -113,7 +113,7 @@ export default function UpdateProfilePage() {
               _placeholder={{ color: "gray.500" }}
               type="email"
               value={inputs.email}
-              onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+              onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
             />
           </FormControl>
           <FormControl>
