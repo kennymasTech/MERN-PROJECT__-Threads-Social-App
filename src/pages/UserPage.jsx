@@ -1,7 +1,20 @@
+import { useEffect, useState } from 'react';
 import UserHeader from "../components/UserHeader";
 import UserPosts from "../components/UserPosts";
 
 const UserPage = () => {
+  const [ user, setUser ] = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const response = await fetch(`api/users/profile/${username}`);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }, [])
+
   return (
     <>
       <UserHeader />
