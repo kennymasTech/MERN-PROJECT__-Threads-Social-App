@@ -7,6 +7,7 @@ import { CgMoreO } from "react-icons/cg";
 import { useToast } from "@chakra-ui/toast";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
+import { Link as RouterLink } from "react-router-dom";
 
 const UserHeader = ({user}) => {
   const toast = useToast();
@@ -56,8 +57,10 @@ const UserHeader = ({user}) => {
       </Flex>
       <Text>{user.bio}</Text>
 
-      <Button size={"sm"} >Update Profile</Button>
-      
+      <Link>
+      <Button size={"sm"}>Update Profile</Button>
+      </Link>
+
       <Flex w={"full"} justifyContent={"space-between"}>
         <Flex gap={2} alignItems={"center"}>
           <Text color={"gray.light"}>{user.followers.length} Followers</Text>
