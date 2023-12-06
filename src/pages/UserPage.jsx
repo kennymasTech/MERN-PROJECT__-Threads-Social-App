@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const UserPage = () => {
   const [ user, setUser ] = useState(null);
-  // const { username } = useParams();
+  const { username } = useParams();
 
   useEffect(() => {
     const getUser = async () => {
