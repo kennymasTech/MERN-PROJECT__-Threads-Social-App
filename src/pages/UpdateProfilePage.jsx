@@ -133,7 +133,7 @@ export default function UpdateProfilePage() {
               _placeholder={{ color: "gray.500" }}
               type="password"
               value={inputs.password}
-              onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+              onChange={(e) => setInputs({ ...inputs, password: e.target.value })}
             />
           </FormControl>
           <Stack spacing={6} direction={["column", "row"]}>
