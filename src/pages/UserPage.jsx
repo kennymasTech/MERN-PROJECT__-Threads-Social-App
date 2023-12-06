@@ -22,7 +22,7 @@ const UserPage = () => {
         setUser(data);
 
       } catch (error) {
-        console.log(error);
+        showToast("Error", error, "error")
       }
     }
     getUser()
