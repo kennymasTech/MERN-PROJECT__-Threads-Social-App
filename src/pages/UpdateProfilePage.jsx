@@ -123,7 +123,7 @@ export default function UpdateProfilePage() {
               _placeholder={{ color: "gray.500" }}
               type="textarea"
               value={inputs.bio}
-              onChange={(e) => setInputs({ ...inputs, name: e.target.value })}
+              onChange={(e) => setInputs({ ...inputs, bio: e.target.value })}
             />
           </FormControl>
           <FormControl>
