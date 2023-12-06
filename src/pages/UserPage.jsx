@@ -27,7 +27,7 @@ const UserPage = () => {
     }
     getUser()
 
-  }, [username])
+  }, [username, showToast])
 
   return (
     <>
