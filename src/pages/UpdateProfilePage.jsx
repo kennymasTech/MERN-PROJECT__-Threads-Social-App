@@ -49,6 +49,8 @@ export default function UpdateProfilePage() {
       }
       showToast("Success", "Profile updated successfully", "success");
       setUser(data);
+      localStorage.setItem("users-threads", JSON.stringify(data));
+      
     } catch (error) {
       showToast("Error", error, "error");
     }
