@@ -31,24 +31,23 @@ export default function UpdateProfilePage() {
   const fileRef = useRef(null);
   const { imgUrl, handleImgChange } = usePreviewImg();
   const showToast = useShowToast();
-  
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-          const res = await fetch(`api/users/update/${user._id}`, {
-            method: "PUT",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({ ...inputs, profilePic: imgUrl }),
-          });
-          const data = await res.json();
-          console.log(data);
-        } catch (error) {
-          showToast("Error", error, "error");
-        }
-      };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`api/users/update/${user._id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ ...inputs, profilePic: imgUrl }),
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      showToast("Error", error, "error");
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
