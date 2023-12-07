@@ -12,7 +12,8 @@ import { Button,
           FormControl,
           Textarea,
           Text,
-          Input} from '@chakra-ui/react'
+          Input,
+          Flex} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
 
@@ -63,7 +64,15 @@ const CreatePosts = () => {
                 />
               </FormControl>
 
-              {imgUrl} 
+              {imgUrl && (
+                <Flex
+                mt={"full"}
+                position={"relative"}
+                w={"full"}
+                >
+
+                </Flex>
+              )}
           </ModalBody>
 
           <ModalFooter>
