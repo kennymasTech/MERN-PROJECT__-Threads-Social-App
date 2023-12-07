@@ -5,14 +5,14 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
 import { Link, Link as RouterLink } from "react-router-dom";
-import RxAvatar from "./RxAvatar";
+import { RxAvatar } from "react-icons/rx";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const user = useRecoilValue(userAtom);
 
   return (
-    <Flex justifyContent={"center"} mt={6} mb="12">
+    <Flex justifyContent={"space-between"} mt={6} mb="12">
 
       {user && (
         <Link as={RouterLink} to="/">
