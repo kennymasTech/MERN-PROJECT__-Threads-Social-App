@@ -5,7 +5,7 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
 import { Link, Link as RouterLink } from "react-router-dom";
-// import RxAvatar from "./RxAvatar";
+import RxAvatar from "./RxAvatar";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -13,23 +13,13 @@ const Header = () => {
 
   return (
     <Flex justifyContent={"center"} mt={6} mb="12">
+
       {user && (
         <Link as={RouterLink} to="/">
           <AiFillHome size={24} />
         </Link>
       )}
 
-      {!user && (
-        <Link as={RouterLink} to={"/auth"} onClick={() => setAuthScreen("login")}>
-          Login
-        </Link>
-      )}
-
-      {/* {user && (
-        <Link as={RouterLink} to="/">
-          <AiFillHome size={24} />
-        </Link>
-      )} */}
 
       <Image
         cursor="pointer"
@@ -37,8 +27,15 @@ const Header = () => {
         w={6}
         src={colorMode === "dark" ? "/light-logo.svg" : "/dark-logo.svg"}
         onClick={toggleColorMode}
-      />
-    </Flex>
+        />
+
+        {user && (
+          <Link as={RouterLink} to={`/${user.username}`}>
+            <RxAvatar size={24} />
+          </Link>
+        )}
+      
+      </Flex>
   );
 };
 
