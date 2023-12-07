@@ -13,7 +13,8 @@ import { Button,
           Textarea,
           Text,
           Input,
-          Flex} from '@chakra-ui/react'
+          Flex,
+          Image} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
 
@@ -68,9 +69,8 @@ const CreatePosts = () => {
                 <Flex
                 mt={"full"}
                 position={"relative"}
-                w={"full"}
                 >
-
+                  <Image src={imgUrl} alt="selectImage"  />
                 </Flex>
               )}
           </ModalBody>
