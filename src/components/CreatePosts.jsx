@@ -54,6 +54,12 @@ const CreatePosts = () => {
                   500/500
                 </Text>
                 <input type="file" hidden ref={imageRef} onChange={handleImgChange} />
+
+                <BsFillImageFill 
+                    style={{marginLeft: "5px", cursor: "pointer"}}
+                    size={16}
+                    onClick={() => {imageRef.current.click()}}   
+                />
               </FormControl>
           </ModalBody>
 
