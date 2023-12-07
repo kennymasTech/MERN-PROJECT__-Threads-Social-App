@@ -14,6 +14,7 @@ import { Button,
           Text} from '@chakra-ui/react'
 import React from 'react'
 import usePreviewImg from '../hooks/usePreviewImg'
+import { BsFillImageFill } from 'react-icons/bs'
 
 
 const CreatePosts = () => {
@@ -52,6 +53,7 @@ const CreatePosts = () => {
                 <Text fontSize={"xs"} fontWeight={"bold"} textAlign={"right"} m={"1"} color={"gray.800"}>
                   500/500
                 </Text>
+                <input type="file" hidden ref={imageRef} onChange={handleImgChange} />
               </FormControl>
           </ModalBody>
 
