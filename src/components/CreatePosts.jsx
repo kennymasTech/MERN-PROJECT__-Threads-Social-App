@@ -13,16 +13,18 @@ import { Button,
           Textarea,
           Text} from '@chakra-ui/react'
 import React from 'react'
+import usePreviewImg from '../hooks/usePreviewImg'
 
 
 const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [postText, setPostText] = useState("")
+  const { handleImgChange, imgUrl } = usePreviewImg()
 
   const handleTextChange = () => {
   
   }
-  
+
   return (
     <>
     <Button
