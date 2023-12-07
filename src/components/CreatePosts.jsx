@@ -35,7 +35,11 @@ const CreatePosts = () => {
           <ModalCloseButton />
           <ModalBody p={6}>
               <FormControl>
-                <Textarea placeholder='post content goes here'/>
+                <Textarea placeholder='post content goes here'
+                          onChange={handleTextChange}
+                          value={postText}
+                />
+                
               </FormControl>
           </ModalBody>
 
