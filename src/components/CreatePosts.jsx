@@ -62,6 +62,8 @@ const CreatePosts = () => {
                     onClick={() => imageRef.current.click()}   
                 />
               </FormControl>
+
+              {imgUrl} 
           </ModalBody>
 
           <ModalFooter>
