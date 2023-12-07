@@ -28,7 +28,7 @@ const CreatePosts = () => {
 
 
   const handleTextChange = (e) => {
-      
+      const inputText = e.target.value
   }
   
   const handleCreatePost = async () => {
