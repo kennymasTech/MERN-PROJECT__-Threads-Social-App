@@ -24,7 +24,7 @@ const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [postText, setPostText] = useState("")
   const imageRef = useRef(null)
-  const { handleImgChange, imgUrl } = usePreviewImg()
+  const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
 
   const handleTextChange = () => {
   
