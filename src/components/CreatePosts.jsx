@@ -68,7 +68,7 @@ const CreatePosts = () => {
                           value={postText}
                 />
                 <Text fontSize={"xs"} fontWeight={"bold"} textAlign={"right"} m={"1"} color={"gray.800"}>
-                  500/500
+                  {remainingChar} / {MAX_CHAR}
                 </Text>
                 <Input type="file" hidden ref={imageRef} onChange={handleImgChange} />
 
