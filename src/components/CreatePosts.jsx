@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { AddIcon } from '@chakra-ui/icons'
 import { Button, 
           Modal,
@@ -11,8 +11,8 @@ import { Button,
           useDisclosure,
           FormControl,
           Textarea,
-          Text} from '@chakra-ui/react'
-import React from 'react'
+          Text,
+          Input} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
 
@@ -20,6 +20,7 @@ import { BsFillImageFill } from 'react-icons/bs'
 const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [postText, setPostText] = useState("")
+  const imageRef = useRef(null)
   const { handleImgChange, imgUrl } = usePreviewImg()
 
   const handleTextChange = () => {
@@ -53,12 +54,12 @@ const CreatePosts = () => {
                 <Text fontSize={"xs"} fontWeight={"bold"} textAlign={"right"} m={"1"} color={"gray.800"}>
                   500/500
                 </Text>
-                <input type="file" hidden ref={imageRef} onChange={handleImgChange} />
+                <Input type="file" hidden ref={imageRef} onChange={handleImgChange} />
 
                 <BsFillImageFill 
                     style={{marginLeft: "5px", cursor: "pointer"}}
                     size={16}
-                    onClick={() => {imageRef.current.click()}}   
+                    onClick={() => imageRef.current.click()}   
                 />
               </FormControl>
           </ModalBody>
