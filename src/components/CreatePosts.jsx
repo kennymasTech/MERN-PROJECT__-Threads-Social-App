@@ -27,6 +27,7 @@ const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [ postText, setPostText ] = useState("")
   const imageRef = useRef(null)
+  const [ loading, setLoading ] = useState(false)
   const [ remainingChar, setRemainingChar ] = useState(MAX_CHAR)
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
 
@@ -44,7 +45,7 @@ const CreatePosts = () => {
   }
   
   const handleCreatePost = async () => {
-
+      setLoading(true)
   }
 
   return (
