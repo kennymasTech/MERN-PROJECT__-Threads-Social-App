@@ -30,8 +30,8 @@ const CreatePosts = () => {
         <ModalContent>
           <ModalHeader>Create Post</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            Text
+          <ModalBody p={6}>
+            Here We Go
           </ModalBody>
 
           <ModalFooter>
