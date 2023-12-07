@@ -84,8 +84,8 @@ const CreatePosts = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
+            <Button colorScheme='blue' mr={3} onClick={handleCreatePost} isLoading>
+              Post
             </Button>
           </ModalFooter>
         </ModalContent>
