@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { AddIcon } from '@chakra-ui/icons'
 import { Button, 
           Modal,
@@ -13,16 +14,15 @@ import { Button,
           Text} from '@chakra-ui/react'
 import React from 'react'
 
-const handleTextChange = () => {
-
-}
-
-const postText = () => {
-  
-}
 
 const CreatePosts = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [postText, setPostText] = useState("")
+
+  const handleTextChange = () => {
+  
+  }
+  
   return (
     <>
     <Button
