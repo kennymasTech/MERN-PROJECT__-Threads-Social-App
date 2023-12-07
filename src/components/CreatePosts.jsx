@@ -26,9 +26,9 @@ const CreatePosts = () => {
   const imageRef = useRef(null)
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
 
-  
-  const handleTextChange = () => {
-    
+
+  const handleTextChange = (e) => {
+      
   }
   
   const handleCreatePost = async () => {
