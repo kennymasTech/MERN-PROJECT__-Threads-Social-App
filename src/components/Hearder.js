@@ -9,6 +9,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Header = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+  const user = useRecoilValue(userAtom);
 
   return (
     <Flex justifyContent={"center"} mt={6} mb="12">
