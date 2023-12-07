@@ -13,6 +13,13 @@ import { Button,
           Text} from '@chakra-ui/react'
 import React from 'react'
 
+const handleTextChange = () => {
+
+}
+
+const postText = () => {
+  
+}
 
 const CreatePosts = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
