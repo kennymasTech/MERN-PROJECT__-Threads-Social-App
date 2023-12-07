@@ -18,6 +18,8 @@ import { Button,
           CloseButton} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
+import { useRecoilValue } from 'recoil'
+import userAtom from '../atoms/userAtom'
 
 
 const MAX_CHAR = 500
@@ -29,6 +31,7 @@ const CreatePosts = () => {
   const [ remainingChar, setRemainingChar ] = useState(MAX_CHAR)
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
   const [ loading, setLoading ] = useState(false)
+  const user = useRecoilValue(userAtom)
 
 
   const handleTextChange = (e) => {
@@ -45,6 +48,17 @@ const CreatePosts = () => {
   
   const handleCreatePost = async () => {
       setLoading(true)
+        try {
+            const res = await fetch("/api/posts/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ postedBy: user._id, text: postText, img: imgUrl}),
+            })
+        } catch (error) {
+          
+        }
   }
 
   return (
