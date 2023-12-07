@@ -18,8 +18,9 @@ import { Button,
           CloseButton} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
-import { useRecoilValue } from 'recoil'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import userAtom from '../atoms/userAtom'
+import { useParams } from 'react-router-dom'
 
 
 const MAX_CHAR = 500
@@ -32,6 +33,10 @@ const CreatePosts = () => {
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
   const [ loading, setLoading ] = useState(false)
   const user = useRecoilValue(userAtom)
+  
+  const showToast = useShowToast()
+  const [ posts, setPost ] = useRecoilState(postAtom)
+  const { username } = useParams()
 
 
   const handleTextChange = (e) => {
