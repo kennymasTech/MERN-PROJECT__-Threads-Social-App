@@ -67,6 +67,8 @@ const CreatePosts = () => {
             if(username === user.username) {
               setPost([data, ...posts])
             }
+
+            onClose()
         } catch (error) {
           
         }
