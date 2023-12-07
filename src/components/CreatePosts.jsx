@@ -18,7 +18,6 @@ import { Button,
           CloseButton} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
-import { set } from 'mongoose'
 
 
 const MAX_CHAR = 500
@@ -27,9 +26,9 @@ const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [ postText, setPostText ] = useState("")
   const imageRef = useRef(null)
-  const [ loading, setLoading ] = useState(false)
   const [ remainingChar, setRemainingChar ] = useState(MAX_CHAR)
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
+  const [ loading, setLoading ] = useState(false)
 
 
   const handleTextChange = (e) => {
