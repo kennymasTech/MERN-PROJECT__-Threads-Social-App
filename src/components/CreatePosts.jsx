@@ -24,8 +24,9 @@ const MAX_CHAR = 500
 
 const CreatePosts = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const [postText, setPostText] = useState("")
+  const [ postText, setPostText ] = useState("")
   const imageRef = useRef(null)
+  const [ remainingChar, setRemainingChar ] = useState(MAX_CHAR)
   const { handleImgChange, imgUrl, setImgUrl } = usePreviewImg()
 
 
@@ -34,6 +35,7 @@ const CreatePosts = () => {
       if(inputText.length > MAX_CHAR) {
         const truncatedText = inputText.slice(0, MAX_CHAR)
         setPostText(truncatedText)
+        setRemainingChar(0)
       }
   }
   
