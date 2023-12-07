@@ -56,6 +56,17 @@ const CreatePosts = () => {
                 },
                 body: JSON.stringify({ postedBy: user._id, text: postText, img: imgUrl}),
             })
+
+            const data = await res.json()
+            if(data.error) {
+              showToast("Error", data.error, "error")
+              return
+            }
+
+            showToast("Success", data.message, "success")
+            if(username === user.username) {
+              setPost([data, ...posts])
+            }
         } catch (error) {
           
         }
