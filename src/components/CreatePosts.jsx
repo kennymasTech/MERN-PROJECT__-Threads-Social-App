@@ -154,7 +154,7 @@ const CreatePosts = () => {
               colorScheme="blue"
               mr={3}
               onClick={handleCreatePost}
-              isLoading
+              isLoading={loading}
             >
               Post
             </Button>
