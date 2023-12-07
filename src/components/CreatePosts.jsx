@@ -14,7 +14,8 @@ import { Button,
           Text,
           Input,
           Flex,
-          Image} from '@chakra-ui/react'
+          Image,
+          CloseButton} from '@chakra-ui/react'
 import usePreviewImg from '../hooks/usePreviewImg'
 import { BsFillImageFill } from 'react-icons/bs'
 
@@ -70,7 +71,14 @@ const CreatePosts = () => {
                 mt={"full"}
                 position={"relative"}
                 >
-                  <Image src={imgUrl} alt="selectImage"  />
+                  <Image src={imgUrl} alt="selectImage" />
+                    <CloseButton 
+                    onClick={() => setImgUrl("")}
+                    bg={"gray.800"}
+                    position={"absolute"}
+                    top={2}
+                    right={2}
+                     />
                 </Flex>
               )}
           </ModalBody>
