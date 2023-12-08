@@ -12,15 +12,18 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Reactions from "./Reactions";
 import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
+import { formatDistanceToNow } from "date-fns";
+
 
 const Posts = ({ post, postedBy }) => {
   const [liked, setLiked] = useState(false);
   const [user, setUser] = useState(null);
 
+  const navigate = useNavigate()
   const showToast = useShowToast();
 
   useEffect(() => {
@@ -46,13 +49,17 @@ const Posts = ({ post, postedBy }) => {
   if (!user) return null;
 
   return (
-    <Link to={"/aliumusa/post/1"}>
+    <Link to={`/${user.username}/post/${post._id}`}>
       <Flex gap={3} mb={4} py={5}>
         <Flex flexDir={"column"} alignItems={"center"}>
           <Avatar
             src={user.profilePic}
             name={`${user.name} ${user.namename}`}
             size={"md"}
+            onClick={(e) => {
+              e.preventDefault()
+              navigate(`/${user.username}`)
+            }}
           />
           <Box w={"1px"} h={"full"} bg={"gray.light"} my={2}></Box>
           <Box pos={"relative"} w={"full"}>
@@ -105,9 +112,12 @@ const Posts = ({ post, postedBy }) => {
             <Flex
               alignItems={"center"}
               gap={4}
-              onClick={(e) => e.preventDefault()}
+              onClick={(e) => {
+                e.preventDefault()
+                Navigate(`/${user.username}`)
+              }}
             >
-              <Text>1day</Text>
+              <Text fontSize={"xs"} w={36} textAlign={"right"}>{formatDistanceToNow(new Date(post.createdAt))} Ago</Text>
               <Menu>
                 <MenuButton>
                   <BsThreeDots cursor={"pointer"} />
