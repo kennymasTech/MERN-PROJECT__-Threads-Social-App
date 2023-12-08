@@ -22,6 +22,7 @@ import userAtom from '../atoms/userAtom'
   
 
   export default function SignupCard() {
+    const [ loading, setLoading ] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
     const setAuthScreen = useSetRecoilState(authScreenAtom)
     const setUser = useSetRecoilState(userAtom)
@@ -42,8 +43,10 @@ import userAtom from '../atoms/userAtom'
             body: JSON.stringify(inputs)
 
         })
-
         const data = await res.json()
+        console.log(data);
+        setLoading(true)
+
 
         if(data.error) {
             showToast("Error", data.error, "error")
