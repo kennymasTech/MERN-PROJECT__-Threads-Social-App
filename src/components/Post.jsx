@@ -16,13 +16,23 @@ import {
   import { Link } from "react-router-dom";
   import Reactions from "./Reactions";
   import { useEffect, useState } from "react";
+import useShowToast from "../hooks/useShowToast";
   
   const Posts = ({ post, postedBy }) => {
     const [liked, setLiked] = useState(false);
+    const showToast = useShowToast();
 
-    // useEffect(() => (
-
-    // ),[])
+    useEffect(() => (
+        const getUser = async () => {
+            try {
+                const res = await fetch(`/api/users/profile/${postedBy}`);
+                const data = await res.json();
+                console.log(data);
+            } catch (error) {
+                showToast("Error", error.message, "error");
+            }
+        }
+    ), [userId])
   
     return (
       <Link to={"/aliumusa/post/1"}>
