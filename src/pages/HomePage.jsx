@@ -13,12 +13,14 @@ const HomePage = () => {
       setLoading(true)
 
       try {
-        const response = await fetch("/api/posts/feed");
+        const res = await fetch("/api/posts/feed");
+        const data = await res.json();
+        console.log(data);
 
       } catch (error) {
         console.log(error);
         showToast("Error", error, "error")
-        
+
       } finally {
         setLoading(false)
       }
