@@ -24,7 +24,6 @@ import useShowToast from "../hooks/useShowToast";
     
     const showToast = useShowToast();
 
-
     useEffect(() => {
         const getUser = async () => {
             try {
