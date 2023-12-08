@@ -19,7 +19,6 @@ import { useSetRecoilState } from 'recoil'
 import authScreenAtom from '../atoms/authAtom'
 import useShowToast from '../hooks/useShowToast'
 import userAtom from '../atoms/userAtom'
-import { set } from 'mongoose'
   
 
   export default function SignupCard() {

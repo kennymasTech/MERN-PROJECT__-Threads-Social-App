@@ -45,7 +45,9 @@ const HomePage = () => {
         </Flex>
       )}
 
-      {posts.map(post => <Post/>)}
+      {posts.map((post) => (
+      <Post key={post._id} post={post} postedBy={post.postedBy} />
+      ))}
     </>
   );
 };
