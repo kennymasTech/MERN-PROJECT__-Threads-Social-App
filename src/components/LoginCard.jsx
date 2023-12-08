@@ -112,7 +112,7 @@ import userAtom from '../atoms/userAtom'
                   }}
                   onClick={handleLogin}
                   >
-                  LogIn
+                  {!loading ? "Login In..." : "Login"}
                 </Button>
               </Stack>
               <Stack pt={6}>
