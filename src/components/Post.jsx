@@ -22,7 +22,7 @@ import useShowToast from "../hooks/useShowToast";
     const [liked, setLiked] = useState(false);
     const showToast = useShowToast();
 
-    useEffect(() => (
+    useEffect(() => {
         const getUser = async () => {
             try {
                 const res = await fetch(`/api/users/profile/${postedBy}`);
@@ -32,7 +32,9 @@ import useShowToast from "../hooks/useShowToast";
                 showToast("Error", error.message, "error");
             }
         }
-    ), [userId])
+
+        getUser()
+  }, [postedBy, showToast])
   
     return (
       <Link to={"/aliumusa/post/1"}>
