@@ -1,6 +1,7 @@
 import { Flex, Spinner, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
+import Post from "../components/Post";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([])
@@ -20,6 +21,7 @@ const HomePage = () => {
           return;
         }
         console.log(data);
+        setPosts(data);
       } catch (error) {
         console.log(error);
         showToast("Error", error.message, "error");
@@ -42,6 +44,8 @@ const HomePage = () => {
           <Spinner size={"xl"}/>
         </Flex>
       )}
+
+      {posts.map(post => <Post/>)}
     </>
   );
 };
