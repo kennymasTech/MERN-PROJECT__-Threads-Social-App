@@ -20,9 +20,9 @@ import {
   const Posts = ({ post, postedBy }) => {
     const [liked, setLiked] = useState(false);
 
-    useEffect(() => (
+    // useEffect(() => (
 
-    ))
+    // ),[])
   
     return (
       <Link to={"/aliumusa/post/1"}>
@@ -118,7 +118,7 @@ import {
             >
               <Text>{post.replies.length} replies</Text>
               <Box w={0.5} h={0.5} bg={"gray.light"} borderRadius={"full"}></Box>
-              <Text>{likes} likes</Text>
+              <Text>{post.likes.length} likes</Text>
             </Flex>
           </Flex>
         </Flex>
