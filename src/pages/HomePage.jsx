@@ -2,7 +2,6 @@ import { Button, Flex } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useShowToast from '../hooks/useShowToast';
-import { set } from 'mongoose';
 
 const HomePage = () => {
   const showToast = useShowToast()
@@ -15,6 +14,11 @@ const HomePage = () => {
       try {
         const res = await fetch("/api/posts/feed");
         const data = await res.json();
+        
+        if(data.error) {
+          showToast("Error", data.error, "error")
+          return
+        }
         console.log(data);
 
       } catch (error) {
