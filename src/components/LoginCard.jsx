@@ -34,6 +34,8 @@ import userAtom from '../atoms/userAtom'
     const showToast = useShowToast()
 
     const handleLogin = async () => {
+      setLoading(true)
+
       try {
         const res = await fetch("/api/users/login", {
             method: "POST",
@@ -45,7 +47,6 @@ import userAtom from '../atoms/userAtom'
         })
         const data = await res.json()
         console.log(data);
-        setLoading(true)
 
 
         if(data.error) {
@@ -112,7 +113,8 @@ import userAtom from '../atoms/userAtom'
                   }}
                   onClick={handleLogin}
                   >
-                  {!loading ? "Login In..." : "Login"}
+                  {/* {!loading ? "Login" : "Login In..."} */}
+                  Login
                 </Button>
               </Stack>
               <Stack pt={6}>
