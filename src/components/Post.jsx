@@ -49,36 +49,50 @@ const Posts = ({ post, postedBy }) => {
     <Link to={"/aliumusa/post/1"}>
       <Flex gap={3} mb={4} py={5}>
         <Flex flexDir={"column"} alignItems={"center"}>
-          <Avatar src="/post1.png" name="Mark Zuckerberg" size={"md"} />
+          <Avatar
+            src={user.profilePic}
+            name={`${user.name} ${user.namename}`}
+            size={"md"}
+          />
           <Box w={"1px"} h={"full"} bg={"gray.light"} my={2}></Box>
           <Box pos={"relative"} w={"full"}>
+            {post.replies.length === 0 && <Text textAlign={"center"}>😂😎</Text>}
+
+            {post.replies[0] && (
             <Avatar
-              src="/post1.png"
-              name="Wale Adenuga"
+              src={post.replies[0].userProfilePic}
+              name={post.replies[0].username}
               size={"xs"}
               pos={"absolute"}
               top={"0"}
               left={"15px"}
               padding={"2px"}
             />
+            )}
+            {post.replies[1] && (
             <Avatar
-              src="/post1.png"
-              name="Ade Kunle"
+              src={post.replies[1].userProfilePic}
+              name={post.replies[1].username}
               size={"xs"}
               pos={"absolute"}
-              bottom={"0"}
-              right={"-5px"}
+              top={"0"}
+              left={"15px"}
               padding={"2px"}
             />
+            )}
+        
+            {post.replies[2] && (
             <Avatar
-              src="/post1.png"
-              name="Wole Soyinka"
+              src={post.replies[2].userProfilePic}
+              name={post.replies[2].username}
               size={"xs"}
               pos={"absolute"}
-              bottom={"0"}
-              left={"4px"}
+              top={"0"}
+              left={"15px"}
               padding={"2px"}
             />
+            )}
+           
           </Box>
         </Flex>
 
