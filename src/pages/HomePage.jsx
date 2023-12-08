@@ -1,10 +1,9 @@
-import { Button, Flex, Spinner } from "@chakra-ui/react";
+import { Flex, Spinner, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import useShowToast from "../hooks/useShowToast";
 
 const HomePage = () => {
-  const [post, setPost] = useState([])
+  const [posts, setPosts] = useState([])
   const showToast = useShowToast();
   const [loading, setLoading] = useState(true);
 
@@ -34,6 +33,10 @@ const HomePage = () => {
 
   return (
     <>
+    {!loading && posts.length === 0 && (
+      <Text>Please Follow A User To See Feed Posts</Text>
+    )}
+
       {loading && (
         <Flex justifyContent={"center"}>
           <Spinner size={"xl"}/>
