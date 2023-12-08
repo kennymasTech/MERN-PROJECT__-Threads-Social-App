@@ -23,7 +23,7 @@ const HomePage = () => {
 
       } catch (error) {
         console.log(error);
-        showToast("Error", error, "error")
+        showToast("Error", error.message, "error")
 
       } finally {
         setLoading(false)
