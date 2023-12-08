@@ -1,51 +1,45 @@
-import { Button, Flex } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import useShowToast from '../hooks/useShowToast';
+import { Button, Flex } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import useShowToast from "../hooks/useShowToast";
 
 const HomePage = () => {
-  const showToast = useShowToast()
-  const [ loading, setLoading ] = useState(true)
+  const showToast = useShowToast();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getFeedPosts = async () => {
-      setLoading(true)
+      setLoading(true);
 
       try {
         const res = await fetch("/api/posts/feed");
         const data = await res.json();
-        
-        if(data.error) {
-          showToast("Error", data.error, "error")
-          return
+
+        if (data.error) {
+          showToast("Error", data.error, "error");
+          return;
         }
         console.log(data);
-
       } catch (error) {
         console.log(error);
-        showToast("Error", error.message, "error")
-
+        showToast("Error", error.message, "error");
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
-    
-    }
+    };
 
-    getFeedPosts()
-  }, [showToast])
-
-
-
+    getFeedPosts();
+  }, [showToast]);
 
   return (
     <div>
-        <Link to={"/kennymas"}>
-            <Flex w={"full"} justifyContent={"center"}>
-                <Button mx={"auto"}>Visit Profile Page</Button>
-            </Flex>
-        </Link>
+      <Link to={"/kennymas"}>
+        <Flex w={"full"} justifyContent={"center"}>
+          <Button mx={"auto"}>Visit Profile Page</Button>
+        </Flex>
+      </Link>
     </div>
-  )
+  );
 };
 
 export default HomePage;
