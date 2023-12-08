@@ -1,4 +1,3 @@
-
 import {
   Avatar,
   Box,
@@ -19,12 +18,11 @@ import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
 import { formatDistanceToNow } from "date-fns";
 
-
 const Posts = ({ post, postedBy }) => {
   const [liked, setLiked] = useState(false);
   const [user, setUser] = useState(null);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const showToast = useShowToast();
 
   useEffect(() => {
@@ -58,49 +56,50 @@ const Posts = ({ post, postedBy }) => {
             name={`${user.name} ${user.namename}`}
             size={"md"}
             onClick={(e) => {
-              e.preventDefault()
-              navigate(`/${user.username}`)
+              e.preventDefault();
+              navigate(`/${user.username}`);
             }}
           />
           <Box w={"1px"} h={"full"} bg={"gray.light"} my={2}></Box>
           <Box pos={"relative"} w={"full"}>
-            {post.replies.length === 0 && <Text textAlign={"center"}>😂😎</Text>}
+            {post.replies.length === 0 && (
+              <Text textAlign={"center"}>😂😎</Text>
+            )}
 
             {post.replies[0] && (
-            <Avatar
-              src={post.replies[0].userProfilePic}
-              name={post.replies[0].username}
-              size={"xs"}
-              pos={"absolute"}
-              top={"0"}
-              left={"15px"}
-              padding={"2px"}
-            />
+              <Avatar
+                src={post.replies[0].userProfilePic}
+                name={post.replies[0].username}
+                size={"xs"}
+                pos={"absolute"}
+                top={"0"}
+                left={"15px"}
+                padding={"2px"}
+              />
             )}
             {post.replies[1] && (
-            <Avatar
-              src={post.replies[1].userProfilePic}
-              name={post.replies[1].username}
-              size={"xs"}
-              pos={"absolute"}
-              top={"0"}
-              left={"15px"}
-              padding={"2px"}
-            />
+              <Avatar
+                src={post.replies[1].userProfilePic}
+                name={post.replies[1].username}
+                size={"xs"}
+                pos={"absolute"}
+                top={"0"}
+                left={"15px"}
+                padding={"2px"}
+              />
             )}
-        
+
             {post.replies[2] && (
-            <Avatar
-              src={post.replies[2].userProfilePic}
-              name={post.replies[2].username}
-              size={"xs"}
-              pos={"absolute"}
-              top={"0"}
-              left={"15px"}
-              padding={"2px"}
-            />
+              <Avatar
+                src={post.replies[2].userProfilePic}
+                name={post.replies[2].username}
+                size={"xs"}
+                pos={"absolute"}
+                top={"0"}
+                left={"15px"}
+                padding={"2px"}
+              />
             )}
-           
           </Box>
         </Flex>
 
@@ -114,11 +113,13 @@ const Posts = ({ post, postedBy }) => {
               alignItems={"center"}
               gap={4}
               onClick={(e) => {
-                e.preventDefault()
-                Navigate(`/${user.username}`)
+                e.preventDefault();
+                Navigate(`/${user.username}`);
               }}
             >
-              <Text fontSize={"xs"} w={36} textAlign={"right"}>{formatDistanceToNow(new Date(post.createdAt))} Ago</Text>
+              <Text fontSize={"xs"} w={36} textAlign={"right"}>
+                {formatDistanceToNow(new Date(post.createdAt))} Ago
+              </Text>
               <Menu>
                 <MenuButton>
                   <BsThreeDots cursor={"pointer"} />
