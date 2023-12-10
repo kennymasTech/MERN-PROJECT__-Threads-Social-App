@@ -1,6 +1,5 @@
 
 
-
 import { Container } from "@chakra-ui/react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import UserPage from "./pages/UserPage";
