@@ -19,6 +19,9 @@ const Reactions = ({ post: post_ }) => {
         "error"
       );
 
+      if(isLiking) return;
+      setIsLiking(true)
+
     try {
       const res = await fetch("/api/posts/like/" + post._id, {
         method: "PUT",
@@ -38,6 +41,8 @@ const Reactions = ({ post: post_ }) => {
       setLiked(!liked);
     } catch (error) {
       showToast("Error", error.message, "error");
+    } finally {
+      setIsLiking(false)
     }
   };
 
