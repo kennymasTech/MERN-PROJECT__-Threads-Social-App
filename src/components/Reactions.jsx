@@ -2,11 +2,23 @@ import { Box, Flex, Text } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useState } from "react";
+import useShowToast from "../hooks/useShowToast";
 
 const Reactions = ({ post: post_ }) => {
   const user = useRecoilValue(userAtom);
   const [post, setPost] = useState(post_);
   const [liked, setLiked] = useState(post.likes.includes(user?._id));
+  const showToast = useShowToast()
+
+
+  const handleLikeAndUnlike = async () => {
+    if(!user) 
+    return showToast(
+        "Error",
+        "You must be logged in to like or unlike a post",
+        "error"
+)
+  }
 
   return (
     <Flex flexDirection="column">
@@ -96,6 +108,7 @@ const Reactions = ({ post: post_ }) => {
           ></polygon>
         </svg>
       </Flex>
+
       <Flex gap={2} color={"gray.light"} fontSize={"sm"} alignItems={"center"}>
         <Text>{post.replies.length} replies</Text>
         <Box w={0.5} h={0.5} bg={"gray.light"} borderRadius={"full"}></Box>
