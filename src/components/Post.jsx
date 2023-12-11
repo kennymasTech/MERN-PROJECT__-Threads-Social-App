@@ -153,7 +153,7 @@ const Posts = ({ post, postedBy }) => {
               <Image src={post.Img} width={"full"} />
             </Box>
           )}
-          <Flex>
+          <Flex gap={3} my={1}>
             <Reactions post={post} liked={liked} setLiked={setLiked} />
           </Flex>
 
