@@ -3,6 +3,7 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useState } from "react";
 import useShowToast from "../hooks/useShowToast";
+import { ca } from "date-fns/locale";
 
 const Reactions = ({ post: post_ }) => {
   const user = useRecoilValue(userAtom);
@@ -47,6 +48,33 @@ const Reactions = ({ post: post_ }) => {
       setIsLiking(false)
     }
   };
+
+  const handleReply = () => {
+    if (!user)
+    return showToast(
+        "Error", 
+        "You must be logged in to reply a post", 
+        "error"
+    );
+
+    if(isPeplying) return;
+    setIsReplying(true)
+
+    try {
+      const res = await fetch("/api/posts/reply/" + post._id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ reply }),
+      });
+      const data = await res.json();
+      setPost({ ...post, replies: [...post.replies, data] });
+      setReply("");
+    
+  } catch (error) {
+    showToast("Error", error.message, "error");
+  }
 
   return (
     <Flex flexDirection="column">
