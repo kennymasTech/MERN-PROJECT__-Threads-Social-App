@@ -26,7 +26,13 @@ const Reactions = ({ post: post_ }) => {
         },
       });
       const data = await res.json();
-      console.log(data);
+
+      if(!liked) {
+        // Add the id of the user to the like array
+        setPost({...post, likes: [...post.likes, user._id]})
+        setLiked(true)
+      }
+
     } catch (error) {
       showToast("Error", error.message, "error");
     }
