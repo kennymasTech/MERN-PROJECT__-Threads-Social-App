@@ -9,7 +9,7 @@ const Reactions = ({ post: post_ }) => {
   const [liked, setLiked] = useState(post.likes.includes(user?._id));
 
   return (
-    <>
+    <Flex>
       <Flex
         cursor={"pointer"}
         gap={3}
