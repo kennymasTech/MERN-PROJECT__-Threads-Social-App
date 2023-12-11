@@ -151,14 +151,19 @@ const Reactions = ({ post: post_ }) => {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <FormControl>
-              <Input placeholder='Replies goes here...' />
+              <Input placeholder='Replies goes here...' 
+              value={reply} 
+              onChange={(e) => setReply(e.target.value)} />
             </FormControl>
-
-  
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button colorScheme='blue'
+             mr={3}
+             size={"sm"}
+             isLoading={isPeplying}
+             onClick={handleReply}
+             >
               Reply
             </Button>
           </ModalFooter>
