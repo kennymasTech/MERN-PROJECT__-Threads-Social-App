@@ -72,11 +72,15 @@ const Reactions = ({ post: post_ }) => {
       console.log(data);
 
       setPost({ ...post, replies: [...post.replies, data] });
-      // setReply("");
-    
+      showToast("Success", "Reply Posted Successfully", "success"); 
+      onclose()
+      setPost("")
   } catch (error) {
     showToast("Error", error.message, "error");
+  } finally {
+    setIsReplying(false)
   }
+
 
   return (
     <Flex flexDirection="column">
