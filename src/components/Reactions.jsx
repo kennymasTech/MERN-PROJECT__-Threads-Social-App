@@ -1,6 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
-const Reactions = ({ liked, setLiked }) => {
+const Reactions = ({post: post_}) => {
+  
   return (
     <>
       <Flex
