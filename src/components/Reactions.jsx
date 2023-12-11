@@ -8,17 +8,29 @@ const Reactions = ({ post: post_ }) => {
   const user = useRecoilValue(userAtom);
   const [post, setPost] = useState(post_);
   const [liked, setLiked] = useState(post.likes.includes(user?._id));
-  const showToast = useShowToast()
-
+  const showToast = useShowToast();
 
   const handleLikeAndUnlike = async () => {
-    if(!user) 
-    return showToast(
+    if (!user)
+      return showToast(
         "Error",
         "You must be logged in to like or unlike a post",
         "error"
-)
-  }
+      );
+
+      try {
+        const res = await fetch("/api/posts/like/" + post._id, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        })
+        const data = await res.json();
+        console.log(data);
+      } catch (error) {
+        showToast("Error", error.message, "error");
+      }
+  };
 
   return (
     <Flex flexDirection="column">
