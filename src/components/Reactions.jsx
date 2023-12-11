@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 
 const Reactions = ({post: post_}) => {
-  
+
   return (
     <>
       <Flex
@@ -9,6 +9,7 @@ const Reactions = ({post: post_}) => {
         gap={3}
         my={2}
         onClick={(e) => e.preventDefault()}
+        flexDirection={"column"}
       >
         <svg
           aria-label="Unlike"
