@@ -1,6 +1,9 @@
 import { Flex } from "@chakra-ui/react";
+import { useRecoilValue } from "recoil";
+import userAtom from "../atoms/userAtom";
 
 const Reactions = ({post: post_}) => {
+  const user = useRecoilValue(userAtom)
 
   return (
     <>
