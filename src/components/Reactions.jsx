@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useState } from "react";
@@ -49,7 +49,7 @@ const Reactions = ({ post: post_ }) => {
     }
   };
 
-  const handleReply = () => {
+  const handleReply = async () => {
     if (!user)
     return showToast(
         "Error", 
@@ -70,9 +70,9 @@ const Reactions = ({ post: post_ }) => {
       });
       const data = await res.json();
       console.log(data);
-      
+
       setPost({ ...post, replies: [...post.replies, data] });
-      setReply("");
+      // setReply("");
     
   } catch (error) {
     showToast("Error", error.message, "error");
@@ -133,9 +133,36 @@ const Reactions = ({ post: post_ }) => {
         <Box w={0.5} h={0.5} bg={"gray.light"} borderRadius={"full"}></Box>
         <Text>{post.likes.length} likes</Text>
       </Flex>
+
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create your account</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody pb={6}>
+            <FormControl>
+              <FormLabel>First name</FormLabel>
+              <Input ref={initialRef} placeholder='First name' />
+            </FormControl>
+
+  
+          </ModalBody>
+
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3}>
+              Save
+            </Button>
+            <Button onClick={onClose}>Cancel</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
-};
+}
+}
 
 export default Reactions;
 
@@ -149,7 +176,7 @@ const RepostSVG = () => {
       role="img"
       viewBox="0 0 24 24"
       width="20"
-    >
+      >
       <title>Repost</title>
       <path d="M19.998 9.497a1 1 0 0 0-1 1v4.228a3.274 3.274 0 0 1-3.27 3.27h-5.313l1.791-1.787a1 1 0 0 0-1.412-1.416L7.29 18.287a1.004 1.004 0 0 0-.294.707v.001c0 .023.012.042.013.065a.923.923 0 0 0 .281.643l3.502 3.504a1 1 0 0 0 1.414-1.414l-1.797-1.798h5.318a5.276 5.276 0 0 0 5.27-5.27v-4.228a1 1 0 0 0-1-1Zm-6.41-3.496-1.795 1.795a1 1 0 1 0 1.414 1.414l3.5-3.5a1.003 1.003 0 0 0 0-1.417l-3.5-3.5a1 1 0 0 0-1.414 1.414l1.794 1.794H8.27A5.277 5.277 0 0 0 3 9.271V13.5a1 1 0 0 0 2 0V9.271a3.275 3.275 0 0 1 3.271-3.27Z"></path>
     </svg>
@@ -159,13 +186,13 @@ const RepostSVG = () => {
 const ShareSVG = () => {
   return (
         <svg
-          aria-label="Share"
-          className="x1lliihq x1n2onr6 x1yxark7"
-          fill="currentColor"
-          height="20"
-          role="img"
-          viewBox="0 0 24 24"
-          width="20"
+        aria-label="Share"
+        className="x1lliihq x1n2onr6 x1yxark7"
+        fill="currentColor"
+        height="20"
+        role="img"
+        viewBox="0 0 24 24"
+        width="20"
         >
           <title>Share</title>
           <line
@@ -187,4 +214,4 @@ const ShareSVG = () => {
           ></polygon>
         </svg>
   )
-};
+}
