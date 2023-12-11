@@ -66,9 +66,11 @@ const Reactions = ({ post: post_ }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ reply }),
+        body: JSON.stringify({ text: reply }),
       });
       const data = await res.json();
+      console.log(data);
+      
       setPost({ ...post, replies: [...post.replies, data] });
       setReply("");
     
