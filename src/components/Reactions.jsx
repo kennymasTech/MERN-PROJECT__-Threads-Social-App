@@ -18,18 +18,18 @@ const Reactions = ({ post: post_ }) => {
         "error"
       );
 
-      try {
-        const res = await fetch("/api/posts/like/" + post._id, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          }
-        })
-        const data = await res.json();
-        console.log(data);
-      } catch (error) {
-        showToast("Error", error.message, "error");
-      }
+    try {
+      const res = await fetch("/api/posts/like/" + post._id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      showToast("Error", error.message, "error");
+    }
   };
 
   return (
@@ -49,7 +49,7 @@ const Reactions = ({ post: post_ }) => {
           role="img"
           viewBox="0 0 20 20"
           width="20"
-          onClick={ handleLikeAndUnlike }
+          onClick={handleLikeAndUnlike}
         >
           <title>Like</title>
           <path
