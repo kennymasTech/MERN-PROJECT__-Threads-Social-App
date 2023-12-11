@@ -1,9 +1,8 @@
-import { Box, Button, Flex, FormControl, FormLabel, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, FormControl, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useState } from "react";
 import useShowToast from "../hooks/useShowToast";
-import { ca } from "date-fns/locale";
 
 const Reactions = ({ post: post_ }) => {
   const user = useRecoilValue(userAtom);
@@ -14,6 +13,8 @@ const Reactions = ({ post: post_ }) => {
   const [ isPeplying, setIsReplying ] = useState(false);
   const showToast = useShowToast();
 
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const handleLikeAndUnlike = async () => {
     if (!user)
       return showToast(
@@ -74,12 +75,13 @@ const Reactions = ({ post: post_ }) => {
       setPost({ ...post, replies: [...post.replies, data] });
       showToast("Success", "Reply Posted Successfully", "success"); 
       onclose()
-      setPost("")
+      setReply("")
   } catch (error) {
     showToast("Error", error.message, "error");
   } finally {
     setIsReplying(false)
   }
+ }
 
 
   return (
@@ -110,15 +112,16 @@ const Reactions = ({ post: post_ }) => {
         </svg>
 
         <svg
-          aria-label="Reply"
+          aria-label="Comment"
           className="x1lliihq x1n2onr6 x1yxark7"
           fill="currentColor"
           height="20"
           role="img"
           viewBox="0 0 24 24"
           width="20"
+          onClick={onOpen}
         >
-          <title>Reply</title>
+          <title>Comment</title>
           <path
             d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"
             fill="none"
@@ -164,7 +167,7 @@ const Reactions = ({ post: post_ }) => {
     </Flex>
   );
 }
-}
+
 
 export default Reactions;
 
