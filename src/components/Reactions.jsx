@@ -9,6 +9,8 @@ const Reactions = ({ post: post_ }) => {
   const [post, setPost] = useState(post_);
   const [liked, setLiked] = useState(post.likes.includes(user?._id));
   const [ isLiking, setIsLiking ] = useState(false);
+  const [ reply, setReply ] = useState("");
+  const [ isPeplying, setIsReplying ] = useState(false);
   const showToast = useShowToast();
 
   const handleLikeAndUnlike = async () => {
