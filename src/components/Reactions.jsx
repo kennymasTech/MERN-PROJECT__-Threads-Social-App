@@ -6,8 +6,8 @@ import useShowToast from "../hooks/useShowToast";
 
 const Reactions = ({ post: post_ }) => {
   const user = useRecoilValue(userAtom);
-  const [post, setPost] = useState(post_);
-  const [liked, setLiked] = useState(post.likes.includes(user?._id));
+  const [ post, setPost ] = useState(post_);
+  const [ liked, setLiked ] = useState(post.likes.includes(user?._id));
   const [ isLiking, setIsLiking ] = useState(false);
   const [ reply, setReply ] = useState("");
   const [ isPeplying, setIsReplying ] = useState(false);
