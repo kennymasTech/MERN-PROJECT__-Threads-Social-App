@@ -10,6 +10,8 @@ const UserPage = () => {
   const { username } = useParams();
   const showToast = useShowToast();
   const [ loading, setLoading ] = useState(true);
+  const [ posts, setPosts ] = useState([]);
+  const [ fetchingPosts, setFetchingPosts ] = useState(false)
 
   useEffect(() => {
     const getUser = async () => {
@@ -28,6 +30,28 @@ const UserPage = () => {
         setLoading(false);
       }
     };
+
+    const getPosts = async () => {
+      try {
+        const response = await fetch(`/api/posts/user/${username}`);
+        const data = await response.json();
+        console.log(data);
+        setPosts(data)
+
+        if (data.error) {
+          showToast("Error", data.error, "error");
+          return;
+        }
+        setUser(data);
+      } catch (error) {
+        showToast("Error", error.message, "error");
+      } finally {
+        setLoading(false);
+      }
+    
+    }
+
+
     getUser();
   }, [username, showToast]);
   if (!user && loading) {
@@ -40,7 +64,7 @@ const UserPage = () => {
 
   return (
     <>
-      <UserHeader user={user} />
+      {/* <UserHeader user={user} />
       <UserPosts
         likes={200}
         replies={70}
@@ -58,7 +82,7 @@ const UserPage = () => {
         replies={250}
         postImg={"/post3.png"}
         postTitle={"Wow! Awesome"}
-      />
+      /> */}
     </>
   );
 };
