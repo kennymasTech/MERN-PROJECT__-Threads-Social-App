@@ -31,11 +31,10 @@ const Reactions = ({ post: post_ }) => {
         // Add the id of the user to the like array
         setPost({...post, likes: [...post.likes, user._id]})
       } else {
-        // Remove the id of the user from the like array
+        // Remove the id of the user from the likes array
         setPost({...post, likes: post.likes.filter((id) => id !== user._id)})
-        setLiked(!liked)
-      
       }
+      setLiked(!liked)
 
     } catch (error) {
       showToast("Error", error.message, "error");
@@ -141,3 +140,14 @@ const Reactions = ({ post: post_ }) => {
 };
 
 export default Reactions;
+
+
+const RepostSVG = () => {
+  return (
+    
+  )
+}
+
+const shareSVG = () => {
+
+}
