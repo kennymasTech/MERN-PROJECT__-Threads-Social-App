@@ -108,7 +108,7 @@ const Reactions = ({ post: post_ }) => {
           <Text>{post.likes.length} likes</Text>
         </Flex>
       </Flex>
-    </>
+    </Flex>
   );
 };
 
