@@ -74,7 +74,7 @@ const Reactions = ({ post: post_ }) => {
 
       setPost({ ...post, replies: [...post.replies, data] });
       showToast("Success", "Reply Posted Successfully", "success"); 
-      onclose()
+      onClose()
       setReply("")
   } catch (error) {
     showToast("Error", error.message, "error");
