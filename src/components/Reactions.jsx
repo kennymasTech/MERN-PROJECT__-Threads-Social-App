@@ -30,7 +30,11 @@ const Reactions = ({ post: post_ }) => {
       if(!liked) {
         // Add the id of the user to the like array
         setPost({...post, likes: [...post.likes, user._id]})
-        setLiked(true)
+      } else {
+        // Remove the id of the user from the like array
+        setPost({...post, likes: post.likes.filter((id) => id !== user._id)})
+        setLiked(!liked)
+      
       }
 
     } catch (error) {
