@@ -3,10 +3,10 @@ import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import { useState } from "react";
 
-const Reactions = ({post: post_}) => {
-  const user = useRecoilValue(userAtom)
-  const [ post, setPost ] = useState(post_)
-  const [ liked, setLiked ] = useState(post.likes.includes(user?._id))
+const Reactions = ({ post: post_ }) => {
+  const user = useRecoilValue(userAtom);
+  const [post, setPost] = useState(post_);
+  const [liked, setLiked] = useState(post.likes.includes(user?._id));
 
   return (
     <>
@@ -15,7 +15,7 @@ const Reactions = ({post: post_}) => {
         gap={3}
         my={2}
         onClick={(e) => e.preventDefault()}
-        flexDirection={"column"}
+        flexDirection="column"
       >
         <svg
           aria-label="Unlike"
