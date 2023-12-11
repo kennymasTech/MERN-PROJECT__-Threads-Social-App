@@ -9,13 +9,12 @@ const Reactions = ({ post: post_ }) => {
   const [liked, setLiked] = useState(post.likes.includes(user?._id));
 
   return (
-    <Flex>
+    <Flex flexDirection="column">
       <Flex
         cursor={"pointer"}
         gap={3}
         my={2}
         onClick={(e) => e.preventDefault()}
-        flexDirection="column"
       >
         <svg
           aria-label="Unlike"
