@@ -154,7 +154,7 @@ const Posts = ({ post, postedBy }) => {
             </Box>
           )}
           <Flex gap={3} my={1}>
-            <Reactions post={post} liked={liked} setLiked={setLiked} />
+            <Reactions post={post} />
           </Flex>
 
           
