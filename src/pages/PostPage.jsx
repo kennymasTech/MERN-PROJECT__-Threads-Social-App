@@ -81,7 +81,7 @@ const PostPage = () => {
     );
   }
 
-  if (!post) return null;
+  if (!currentPost) return null;
 
   return (
     <>
@@ -109,7 +109,7 @@ const PostPage = () => {
             textAlign={"right"}
             color={"gray.light"}
           >
-            {formatDistanceToNow(new Date(post.createdAt))} ago
+            {formatDistanceToNow(new Date(currentPost.createdAt))} ago
           </Text>
           {currentUser?._id === user._id && (
             <DeleteIcon
@@ -120,21 +120,21 @@ const PostPage = () => {
           )}
         </Flex>
       </Flex>
-      <Text my={3}>{post.text}</Text>
+      <Text my={3}>{currentPost.text}</Text>
 
-      {post.img && (
+      {currentPost.img && (
         <Box
           borderRadius={6}
           overflow={"hidden"}
           border={"1px solid"}
           borderColor={"gray.light"}
         >
-          <Image src={post.img} width={"full"} />
+          <Image src={currentPost.img} width={"full"} />
         </Box>
       )}
 
       <Flex>
-        <Actions post={post} />
+        <Actions post={currentPost} />
       </Flex>
 
       {/* <Flex color={"gray.light"} gap={2} fontSize={"sm"} alignItems={"center"}>
