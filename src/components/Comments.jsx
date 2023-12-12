@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import Actions from "./Actions";
 
-const Comments = ({ reply }) => {
+const Comments = ({ reply, lastReply }) => {
   const [liked, setLiked] = useState(false);
   return (
     <>
