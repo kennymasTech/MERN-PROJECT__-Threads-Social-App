@@ -18,7 +18,7 @@ const Comments = ({ comment, createdAt, likes, username, userAvater }) => {
   return (
     <>
       <Flex gap={4} my={2} py={2} w={"full"}>
-        <Avatar src={userAvater} size={"sm"} name={username} />
+        <Avatar src={reply.userProfilePic} size={"sm"} name={reply.username} />
         <Flex flexDir={"column"} gap={1} w={"full"}>
           <Flex
             justifyContent={"space-between"}
@@ -26,7 +26,7 @@ const Comments = ({ comment, createdAt, likes, username, userAvater }) => {
             w={"full"}
           >
             <Text fontSize={"sm"} fontWeight={"bold"}>
-              {username}
+              {reply.username}
             </Text>
 
           </Flex>
