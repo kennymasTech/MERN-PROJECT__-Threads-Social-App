@@ -31,6 +31,7 @@ const PostPage = () => {
   const currentUser = useRecoilValue(userAtom);
   const navigate = useNavigate();
 
+  const currentPost = posts[0]
   useEffect(() => {
     const getPosts = async () => {
       try {
@@ -54,7 +55,7 @@ const PostPage = () => {
 
 		if (!window.confirm("Are you sure you want to delete this post?")) return;
 
-      const res = await fetch(`/api/posts/${post._id}`, {
+      const res = await fetch(`/api/posts/${currentPost._id}`, {
         method: "DELETE",
       });
 
@@ -72,7 +73,7 @@ const PostPage = () => {
     }
   };
 
-  if (!user && loading) {
+  if (!currentPost && loading) {
     return (
       <Flex justifyContent={"center"}>
         <Spinner size={"xl"} />
@@ -91,8 +92,8 @@ const PostPage = () => {
         justifyContent={"space-between"}
       >
         <Flex alignItems={"center"}>
-          <Avatar src={user.profilePic} name={user.name} size={"md"} mr={2} />
-          <Text fontSize={"sm"}>{user.username}</Text>
+          <Avatar src={currentPost.profilePic} name={user.name} size={"md"} mr={2} />
+          <Text fontSize={"sm"}>{currentPost.username}</Text>
           <Image src="/verified.png" h={4} w={4} ml={2} />
         </Flex>
 
@@ -153,11 +154,11 @@ const PostPage = () => {
       </Flex>
 
       <Divider my={4} />
-		{post.replies.map(reply => (
+		{currentPost.replies.map(reply => (
 			<Comments 
 			key={reply._id}
 			reply={reply}
-			lastReply={reply._id === post.replies[post.replies.length - 1]._id}
+			lastReply={reply._id === currentPost.replies[currentPost.replies.length - 1]._id}
 			/>
 		))}
 
