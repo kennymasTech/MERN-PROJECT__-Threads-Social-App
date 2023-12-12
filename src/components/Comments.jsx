@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Divider,
   Flex,
   Menu,
   MenuButton,
@@ -34,6 +35,7 @@ const Comments = ({ reply, lastReply }) => {
          
         </Flex>
       </Flex>
+      { !lastReply ? <Divider/> : null }
     </>
   );
 };
