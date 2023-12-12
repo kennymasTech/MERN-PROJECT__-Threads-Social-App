@@ -73,7 +73,7 @@ const PostPage = () => {
     }
   };
 
-  if (!currentPost && loading) {
+  if (!user && loading) {
     return (
       <Flex justifyContent={"center"}>
         <Spinner size={"xl"} />
