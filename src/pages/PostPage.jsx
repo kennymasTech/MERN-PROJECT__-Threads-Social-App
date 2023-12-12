@@ -14,7 +14,7 @@ import Reactions from "../components/Reactions";
 import Comments from "../components/Comments";
 
 const PostPage = () => {
-  const [liked, setLiked] = useState(false);
+  // const [liked, setLiked] = useState(false);
   return (
     <>
       <Flex
