@@ -149,7 +149,16 @@ const PostPage = () => {
         <Button>Get</Button>
       </Flex>
 
-      <Divider my={4} />
+      <Divider my={4} >
+		{post.replies.map(reply => {
+			<Comment 
+			key={reply._id}
+			reply={reply}
+			/>
+		})}
+	  </Divider>
+
+	  
 
       {/* <Comments username={'Ryan Florence'} likes={12} createdAt={'2 min ago'} userAvatar={'https://bit.ly/ryan-florence'} comment={"Keep it up!!"} /> */}
     </>
