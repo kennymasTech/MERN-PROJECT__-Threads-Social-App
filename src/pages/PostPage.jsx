@@ -24,7 +24,8 @@ import postsAtom from "../atoms/postsAtom";
 
 const PostPage = () => {
   const { user, loading } = useGetUserProfile();
-  const  [post, setPost ] = useRecoilState(postsAtom);
+  const [ posts, setPosts ] = useRecoilState(postsAtom);
+  const [ post, setPost ] = useState(null);
   const showToast = useShowToast();
   const { pid } = useParams();
   const currentUser = useRecoilValue(userAtom);
@@ -46,7 +47,7 @@ const PostPage = () => {
       }
     };
     getPosts();
-  }, [showToast, pid]);
+  }, [showToast, pid, setPosts]);
 
   const handleDeletePost = async () => {
     try {
