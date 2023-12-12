@@ -4,6 +4,7 @@ import userAtom from "../atoms/userAtom";
 import { AiFillHome } from "react-icons/ai";
 import {RxAvatar} from "react-icons/rx";
 import { Link as RouterLink } from "react-router-dom";
+import { FiLogOut } from "react-icons/fi";
 // import RxAvatar from "./RxAvatar";
 
 const Header = () => {
@@ -36,7 +37,7 @@ const Header = () => {
 				<RxAvatar fontSize={24} />
 				</Link>
 
-				<Button >
+				<Button alignItems={"center"} >
 					<FiLogOut size={20} />
 				</Button>
 			</Flex>
