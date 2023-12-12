@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { BsThreeDots } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
-import Reactions from "./Reactions";
+import Actions from "./Actions";
 import { useEffect, useState } from "react";
 import useShowToast from "../hooks/useShowToast";
 import { formatDistanceToNow } from "date-fns";
@@ -142,31 +142,13 @@ const Post = ({ post, postedBy }) => {
 							gap={4}
 							onClick={(e) => e.preventDefault()}
 						>
-							<Text fontSize={"xs"} width={36} textAlign={"right"}>
+							<Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.light"}>
 								{formatDistanceToNow(new Date(post.createdAt))} ago
 							</Text>
 							{currentUser?._id === user._id && (
-								<DeleteIcon size={20} onClick={handleDeletePost} />
+								<DeleteIcon cursor={"pointer"} size={20} onClick={handleDeletePost} />
 							)}
-							{/* <Menu>
-								<MenuButton>
-									<BsThreeDots cursor={"pointer"} />
-								</MenuButton>
-								<MenuList>
-									<MenuGroup>
-										<MenuItem color={"gray.light"}>Mute</MenuItem>
-									</MenuGroup>
-									<MenuDivider />
-									<MenuGroup>
-										<MenuItem color={"red"}>Block</MenuItem>
-										<MenuItem color={"gray.light"}>Hide</MenuItem>
-									</MenuGroup>
-									<MenuDivider />
-									<MenuGroup>
-										<MenuItem color={"red"}>Report</MenuItem>
-									</MenuGroup>
-								</MenuList>
-							</Menu> */}
+							
 						</Flex>
 					</Flex>
 
@@ -182,7 +164,7 @@ const Post = ({ post, postedBy }) => {
 						</Box>
 					)}
 					<Flex gap={3} my={1}>
-						<Reactions post={post} />
+						<Actions post={post} />
 					</Flex>
 				</Flex>
 			</Flex>
