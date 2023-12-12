@@ -18,6 +18,7 @@ const PostPage = () => {
 
   useEffect (() => {
     const getUser = async () => {
+      
       try {
         const res = await fetch("/api/users/profile")
         const data = await res.json()
