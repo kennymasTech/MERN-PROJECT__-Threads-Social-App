@@ -1,4 +1,3 @@
-
 import {
   Avatar,
   Box,
@@ -71,13 +70,11 @@ const PostPage = () => {
       <Divider my={4} />
 
       {/* <Comments comment={"This is Great"} createdAt={"2 min ago"} userAvater={"https://bit.ly/ryan-florence"} likes={67} username={"Kennymas"}/> */}
-      
     </>
   );
 };
 
 export default PostPage;
-
 
 // import {
 //   Avatar,
@@ -153,7 +150,7 @@ export default PostPage;
 //           <Text color={"gray.light"}>
 //             Get the app to like, reply and post{" "}
 //           </Text>
-//         </Flex>  
+//         </Flex>
 //         <Button> Get </Button>
 //       </Flex>
 
