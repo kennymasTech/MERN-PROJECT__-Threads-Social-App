@@ -142,7 +142,7 @@ const Post = ({ post, postedBy }) => {
 							gap={4}
 							onClick={(e) => e.preventDefault()}
 						>
-							<Text fontSize={"xs"} width={36} textAlign={"right"} color={"gray.light"}>
+							<Text fontSize={"xs"} width={36} textAlign={"right"} color={"white"}>
 								{formatDistanceToNow(new Date(post.createdAt))} ago
 							</Text>
 							{currentUser?._id === user._id && (
