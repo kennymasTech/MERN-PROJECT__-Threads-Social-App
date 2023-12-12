@@ -28,34 +28,10 @@ const Comments = ({ comment, createdAt, likes, username, userAvater }) => {
             <Text fontSize={"sm"} fontWeight={"bold"}>
               {username}
             </Text>
-            <Flex gap={2} alignItems={"center"}>
-              <Text fontSize={"sm"} color={"gray.light"}>
-                {createdAt}
-              </Text>
-              <Menu >
-                <MenuButton>
-                  <BsThreeDots cursor={"pointer"} />
-                </MenuButton>
-                <MenuList>
-                  <MenuGroup>
-                    <MenuItem color={"gray.light"}>Mute</MenuItem>
-                  </MenuGroup>
-                  <MenuDivider />
-                  <MenuGroup>
-                    <MenuItem color={"red"}>Block</MenuItem>
-                    <MenuItem color={"gray.light"}>Hide</MenuItem>
-                  </MenuGroup>
-                  <MenuDivider />
-                  <MenuGroup>
-                    <MenuItem color={"red"}>Report</MenuItem>
-                  </MenuGroup>
-                </MenuList>
-              </Menu>
-            </Flex>
+
           </Flex>
-          <Text>{comment}</Text>
-          <Actions liked={liked} setLiked={setLiked} />
-          <Text>{likes + (liked ? 1 : 0)} likes</Text>
+          <Text>{reply}</Text>
+         
         </Flex>
       </Flex>
     </>

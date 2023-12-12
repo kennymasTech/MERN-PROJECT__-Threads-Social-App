@@ -19,6 +19,7 @@ import { formatDistanceToNow } from "date-fns";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
+import Comments from "../components/Comments";
 
 const PostPage = () => {
   const { user, loading } = useGetUserProfile();
@@ -150,15 +151,15 @@ const PostPage = () => {
       </Flex>
 
       <Divider my={4} >
-		{post.replies.map(reply => {
-			<Comment 
+		{post.replies.map(reply => (
+			<Comments 
 			key={reply._id}
 			reply={reply}
 			/>
-		})}
+		))}
 	  </Divider>
 
-	  
+
 
       {/* <Comments username={'Ryan Florence'} likes={12} createdAt={'2 min ago'} userAvatar={'https://bit.ly/ryan-florence'} comment={"Keep it up!!"} /> */}
     </>
