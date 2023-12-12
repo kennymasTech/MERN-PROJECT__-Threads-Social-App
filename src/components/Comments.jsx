@@ -13,12 +13,12 @@ import React, { useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import Actions from "./Actions";
 
-const Comments = ({ comment, createdAt, likes, username, userAvater }) => {
+const Comments = ({ reply }) => {
   const [liked, setLiked] = useState(false);
   return (
     <>
       <Flex gap={4} my={2} py={2} w={"full"}>
-        <Avatar src={reply.userProfilePic} size={"sm"} name={username} />
+        <Avatar src={reply.userProfilePic} size={"sm"} name={reply.username} />
         <Flex flexDir={"column"} gap={1} w={"full"}>
           <Flex
             justifyContent={"space-between"}
@@ -30,7 +30,7 @@ const Comments = ({ comment, createdAt, likes, username, userAvater }) => {
             </Text>
 
           </Flex>
-          <Text>{reply}</Text>
+          <Text>{reply.text}</Text>
          
         </Flex>
       </Flex>

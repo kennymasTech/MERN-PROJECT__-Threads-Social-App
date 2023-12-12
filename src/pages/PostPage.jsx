@@ -150,14 +150,13 @@ const PostPage = () => {
         <Button>Get</Button>
       </Flex>
 
-      <Divider my={4} >
+      <Divider my={4} />
 		{post.replies.map(reply => (
 			<Comments 
 			key={reply._id}
 			reply={reply}
 			/>
 		))}
-	  </Divider>
 
 
 
