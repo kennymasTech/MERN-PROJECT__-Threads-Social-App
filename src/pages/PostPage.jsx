@@ -7,13 +7,34 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import Reactions from "../components/Reactions";
 import Comments from "../components/Comments";
 
 const PostPage = () => {
   // const [liked, setLiked] = useState(false);
+    const [ user, setUser ] = useState(null)
+
+  useEffect (() => {
+    const getUser = async () => {
+      try {
+        const res = await fetch("/api/users/profile")
+        const data = await res.json()
+        if (data.error) {
+          console.log(data.error)
+        } else {
+          setUser(data.user)
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getUser()
+    console.log(user)
+  
+
+  }, [])
   return (
     <>
       <Flex
