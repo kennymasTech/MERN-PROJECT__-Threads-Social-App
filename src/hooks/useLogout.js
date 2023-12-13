@@ -1,11 +1,11 @@
-import { useRecoilValue } from "recoil"
+import { useRecoilValue, useSetRecoilState } from "recoil"
 import userAtom from "../atoms/userAtom"
 import useShowToast from "./useShowToast"
 
 
 
 const useLogout = () => {
-    const setUser = useRecoilValue(userAtom)
+    const setUser = useSetRecoilState(userAtom)
     const showToast = useShowToast()
   
     const logout = async () => {
