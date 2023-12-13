@@ -5,11 +5,13 @@ import { AiFillHome } from "react-icons/ai";
 import {RxAvatar} from "react-icons/rx";
 import { Link as RouterLink } from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
+import useLogout from "../hooks/useLogout";
 // import RxAvatar from "./RxAvatar";
 
 const Header = () => {
 	const { colorMode, toggleColorMode } = useColorMode();
 	const user = useRecoilValue(userAtom);
+	const logout = useLogout()
 
 	return (
 		<Flex justifyContent={"space-between"}  mt={6} mb="12">
@@ -37,7 +39,7 @@ const Header = () => {
 				<RxAvatar fontSize={24} />
 				</Link>
 
-				<Button size={"xs"} >
+				<Button size={"xs"} onClick={logout} >
 					<FiLogOut size={20} />
 				</Button>
 			</Flex>
