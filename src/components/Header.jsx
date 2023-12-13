@@ -37,7 +37,7 @@ const Header = () => {
 				<RxAvatar fontSize={24} />
 				</Link>
 
-				<Button >
+				<Button size={"xs"} >
 					<FiLogOut size={20} />
 				</Button>
 			</Flex>
