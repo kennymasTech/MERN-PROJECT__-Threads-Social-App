@@ -29,6 +29,7 @@ const useLogout = () => {
             showToast("Error", error, "error")
         }
     }
+    return logout
 }
 
 export default useLogout
